@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/RandomSpawn/Scenes/RandomSpawn.unity
+- path: Assets/Armas/Escenas/armas.unity
   isLoaded: 1
   isActive: 1

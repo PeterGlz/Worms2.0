@@ -28,19 +28,4 @@ public class armas : MonoBehaviour
                 break;
         }
 	}
-
-    void boton1()
-    {
-        armaI = 1;
-    }
-
-    void boton2()
-    {
-        armaI = 2;
-    }
-
-    void boton3()
-    {
-        armaI = 3;
-    }
 }
