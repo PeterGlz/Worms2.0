@@ -9,10 +9,12 @@ public class armas : MonoBehaviour
     public GameObject arma2;
     public GameObject arma3;
 
+    public Transform balin;
+
     void Start ()
     {
-		
-	}
+        
+    }
 	
 	void Update ()
     {
@@ -29,6 +31,8 @@ public class armas : MonoBehaviour
             armaI = 3;
         }
 
+       
+
         switch (armaI)
         {
             case 1: //tenedor
@@ -41,6 +45,11 @@ public class armas : MonoBehaviour
                 arma1.SetActive(false);
                 arma2.SetActive(true);
                 arma3.SetActive(false);
+                if (Input.GetMouseButton(0))
+                {
+                    Instantiate(balin, arma2.transform.position, Quaternion.identity);
+                }
+                    
                 break;
 
             case 3: //mina
