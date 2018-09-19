@@ -10,6 +10,7 @@ public class armas : MonoBehaviour
     public GameObject arma3;
 
     public Transform balin;
+    public Transform minas;
 
     void Start ()
     {
@@ -56,6 +57,10 @@ public class armas : MonoBehaviour
                 arma1.SetActive(false);
                 arma2.SetActive(false);
                 arma3.SetActive(true);
+                if(Input.GetMouseButtonDown(0))
+                {
+                    Instantiate(minas, arma3.transform.position, Quaternion.identity);
+                }
                 break;
         }
 	}

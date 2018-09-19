@@ -5,6 +5,7 @@ using UnityEngine;
 public class bala_metra : MonoBehaviour
 {
     public Rigidbody rb;
+    public float tiempo;
 
     void Start ()
     {
