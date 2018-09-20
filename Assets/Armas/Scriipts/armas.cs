@@ -7,6 +7,7 @@ public class armas : MonoBehaviour
     public int armaI = 1;
     public GameObject arma1;
     public GameObject arma2;
+    public GameObject arma2spawn;
     public GameObject arma3;
 
     public Transform balin;
@@ -48,7 +49,7 @@ public class armas : MonoBehaviour
                 arma3.SetActive(false);
                 if (Input.GetMouseButton(0))
                 {
-                    Instantiate(balin, arma2.transform.position, Quaternion.identity);
+                    Instantiate(balin, arma2spawn.transform.position, Quaternion.identity);
                 }
                     
                 break;

@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class bala_metra : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float tiempo;
-
-    void Start ()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    public float vel;
 	
 	void Update ()
     {
-        rb.velocity = new Vector3(10, 0, 0);
+        transform.Translate(Vector3.right * vel * Time.deltaTime);
+
+        Destroy(gameObject, 2);
     }
 }
