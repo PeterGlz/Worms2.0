@@ -13,9 +13,11 @@ public class armas : MonoBehaviour
     public Transform balin;
     public Transform minas;
 
+    public Animator anim;
+
     void Start ()
     {
-        
+        anim = GetComponent<Animator>();
     }
 	
 	void Update ()
@@ -33,14 +35,17 @@ public class armas : MonoBehaviour
             armaI = 3;
         }
 
-       
-
         switch (armaI)
         {
             case 1: //tenedor
                 arma1.SetActive(true);
                 arma2.SetActive(false);
                 arma3.SetActive(false);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    print("algo");
+                    anim.SetTrigger("ataque");
+                }
                 break;
 
             case 2: //metralleta

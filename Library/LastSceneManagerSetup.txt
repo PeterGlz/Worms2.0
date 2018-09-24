@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/UI/Scenes/Pausa.unity
+- path: Assets/Armas/Escenas/armas.unity
   isLoaded: 1
   isActive: 1
