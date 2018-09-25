@@ -8,6 +8,7 @@ public class bala_metra : MonoBehaviour
 	
 	void Update ()
     {
+        //Vector3 algo = new Vector3(0,0,1);
         transform.Translate(Vector3.right * vel * Time.deltaTime);
 
         Destroy(gameObject, 2);

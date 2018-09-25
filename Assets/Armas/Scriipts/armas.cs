@@ -13,6 +13,11 @@ public class armas : MonoBehaviour
     public Transform balin;
     public Transform minas;
 
+    public float MouseY;
+    public float MouseX;
+    public float angulo;
+    public float rad;
+
     public Animator anim;
 
     void Start ()
@@ -35,6 +40,13 @@ public class armas : MonoBehaviour
             armaI = 3;
         }
 
+        MouseX = Input.mousePosition.x;
+        MouseY = Input.mousePosition.y;
+
+        angulo = Mathf.Atan2(MouseY, MouseX)*100;
+
+        //rad = angulo * Mathf.Deg2Rad;
+
         switch (armaI)
         {
             case 1: //tenedor
@@ -54,7 +66,8 @@ public class armas : MonoBehaviour
                 arma3.SetActive(false);
                 if (Input.GetMouseButton(0))
                 {
-                    Instantiate(balin, arma2spawn.transform.position, Quaternion.identity);
+
+                    Instantiate(balin, arma2spawn.transform.position, Quaternion.Euler(0,0,angulo));
                 }
                     
                 break;

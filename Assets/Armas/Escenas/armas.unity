@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -347,6 +347,10 @@ MonoBehaviour:
   arma3: {fileID: 86085619}
   balin: {fileID: 4439691877797002, guid: b60b9669099e66a49901cab1b340caac, type: 2}
   minas: {fileID: 4465515920829108, guid: cdb194aa267f5aa4984ba3f1c5e7e1fc, type: 2}
+  MouseY: 0
+  MouseX: 0
+  angulo: 0
+  rad: 0
   anim: {fileID: 671038826}
 --- !u!95 &671038826
 Animator:
