@@ -5,11 +5,11 @@ using UnityEngine;
 public class bala_metra : MonoBehaviour
 {
     public float vel;
+    public Vector3 direction = Vector3.right;
 	
 	void Update ()
     {
-        //Vector3 algo = new Vector3(0,0,1);
-        transform.Translate(Vector3.right * vel * Time.deltaTime);
+        transform.Translate(direction * vel * Time.deltaTime);
 
         Destroy(gameObject, 2);
     }

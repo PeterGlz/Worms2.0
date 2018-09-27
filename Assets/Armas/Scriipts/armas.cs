@@ -13,10 +13,7 @@ public class armas : MonoBehaviour
     public Transform balin;
     public Transform minas;
 
-    public float MouseY;
-    public float MouseX;
     public float angulo;
-    public float rad;
 
     public Animator anim;
 
@@ -24,8 +21,12 @@ public class armas : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-	
-	void Update ()
+
+    public Transform myGun;
+    RaycastHit hitInfo;
+    public LayerMask rayMask;
+
+    void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -40,12 +41,23 @@ public class armas : MonoBehaviour
             armaI = 3;
         }
 
-        MouseX = Input.mousePosition.x;
-        MouseY = Input.mousePosition.y;
+        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+        Physics.Raycast(Camera.main.ScreenPointToRay(mousePos), out hitInfo, 100, rayMask);
+        Vector3 lookPos = hitInfo.point;
 
-        angulo = Mathf.Atan2(MouseY, MouseX)*100;
+        myGun.LookAt(lookPos);
 
-        //rad = angulo * Mathf.Deg2Rad;
+        if (Input.GetMouseButton(0))
+        {
+            Instantiate(balin, myGun.position, myGun.rotation);
+        }
+
+        Debug.DrawLine(Camera.main.ScreenPointToRay(mousePos).origin, hitInfo.point, Color.green);
+        Debug.DrawLine(transform.position, lookPos, Color.red);
+
+        /*lookPos = lookPos - transform.position;
+
+        angulo = Mathf.Atan2(lookPos.y, lookPos.x) * Mathf.Rad2Deg;*/
 
         switch (armaI)
         {

@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 30
+  direction: {x: 0, y: 0, z: 1}
 --- !u!135 &135276223715035620
 SphereCollider:
   m_ObjectHideFlags: 1
