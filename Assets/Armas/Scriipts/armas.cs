@@ -7,13 +7,16 @@ public class armas : MonoBehaviour
     public GameObject arma1;
     public GameObject arma2;
     public GameObject arma3;
+    public Transform camara;
     public Transform balin;
     public Transform minas;
     public Transform uzi;
     public Animator anim;
     public LayerMask rayMask;
 
-    public int armaI = 1;
+    public float municion;
+    public int armaUsando;
+    public bool minaSuelo;
 
     RaycastHit hitInfo;
 
@@ -26,27 +29,28 @@ public class armas : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            armaI = 1;
+            armaUsando = 1;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            armaI = 2;
+            armaUsando = 2;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            armaI = 3;
+            armaUsando = 3;
         }
 
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         Physics.Raycast(Camera.main.ScreenPointToRay(mousePos), out hitInfo, 100, rayMask);
         Vector3 lookPos = hitInfo.point;
 
-        switch (armaI)
+        switch (armaUsando)
         {
             case 1: //tenedor
                 arma1.SetActive(true);
                 arma2.SetActive(false);
                 arma3.SetActive(false);
+                camara.transform.position = new Vector3(transform.position.x, transform.position.y, -5);
                 if (Input.GetMouseButtonDown(0))
                 {
                     anim.SetTrigger("ataque");
@@ -57,9 +61,11 @@ public class armas : MonoBehaviour
                 arma1.SetActive(false);
                 arma2.SetActive(true);
                 arma3.SetActive(false);
+                camara.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
                 uzi.LookAt(lookPos);
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0) && municion > 0)
                 {
+                    municion--;
                     Instantiate(balin, uzi.position, uzi.rotation);
                     /*Debug.DrawLine(Camera.main.ScreenPointToRay(mousePos).origin, hitInfo.point, Color.green);
                     Debug.DrawLine(transform.position, lookPos, Color.red);*/
@@ -70,9 +76,11 @@ public class armas : MonoBehaviour
                 arma1.SetActive(false);
                 arma2.SetActive(false);
                 arma3.SetActive(true);
-                if(Input.GetMouseButtonDown(0))
+                camara.transform.position = new Vector3(transform.position.x, transform.position.y, -6);
+                if (Input.GetMouseButtonDown(0) && minaSuelo == false)
                 {
                     Instantiate(minas, arma3.transform.position, Quaternion.identity);
+                    minaSuelo = true;
                 }
                 break;
         }

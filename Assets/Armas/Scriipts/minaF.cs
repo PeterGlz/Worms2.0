@@ -5,13 +5,14 @@ using UnityEngine;
 public class minaF : MonoBehaviour
 {
 
-	void Start ()
+    void Start()
     {
-		
-	}
-	
-	void Update ()
+        StartCoroutine(explosion());
+    }
+
+    IEnumerator explosion()
     {
-        Destroy(gameObject, 4);
-	}
+        yield return new WaitForSeconds(4);
+        Destroy(gameObject);
+    }
 }
