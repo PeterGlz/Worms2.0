@@ -7,10 +7,10 @@ public class minaF : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(explosion());
+        StartCoroutine(Explosion());
     }
 
-    IEnumerator explosion()
+    IEnumerator Explosion()
     {
         yield return new WaitForSeconds(4);
         Destroy(gameObject);
