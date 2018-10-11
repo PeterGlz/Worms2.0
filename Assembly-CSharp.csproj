@@ -63,7 +63,12 @@
   <ItemGroup>
     <Compile Include="Assets\Armas\Scriipts\armas.cs" />
     <Compile Include="Assets\Armas\Scriipts\bala_metra.cs" />
+    <Compile Include="Assets\Armas\Scriipts\controller.cs" />
     <Compile Include="Assets\Armas\Scriipts\minaF.cs" />
+    <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBone.cs" />
+    <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneCollider.cs" />
+    <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneColliderBase.cs" />
+    <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBonePlaneCollider.cs" />
     <Compile Include="Assets\RandomSpawn\Scripts\RandomSpawn.cs" />
     <Compile Include="Assets\UI\MenuController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
