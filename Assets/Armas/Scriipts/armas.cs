@@ -14,7 +14,7 @@ public class armas : MonoBehaviour
     public Animator anim;
     public LayerMask rayMask;
 
-    public float municion;
+    [SerializeField] private float municion;
     public int armaUsando;
     public bool minaSuelo;
 
@@ -27,18 +27,7 @@ public class armas : MonoBehaviour
 
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            armaUsando = 1;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            armaUsando = 2;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            armaUsando = 3;
-        }
+        Inventario();
 
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         Physics.Raycast(Camera.main.ScreenPointToRay(mousePos), out hitInfo, 100, rayMask);
@@ -47,21 +36,12 @@ public class armas : MonoBehaviour
         switch (armaUsando)
         {
             case 1: //tenedor
-                arma1.SetActive(true);
-                arma2.SetActive(false);
-                arma3.SetActive(false);
-                camara.transform.position = new Vector3(transform.position.x, transform.position.y, -5);
                 if (Input.GetMouseButtonDown(0))
                 {
                     anim.SetTrigger("ataque");
                 }
                 break;
-
             case 2: //metralleta
-                arma1.SetActive(false);
-                arma2.SetActive(true);
-                arma3.SetActive(false);
-                camara.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
                 uzi.LookAt(lookPos);
                 if (Input.GetMouseButton(0) && municion > 0)
                 {
@@ -71,12 +51,7 @@ public class armas : MonoBehaviour
                     Debug.DrawLine(transform.position, lookPos, Color.red);*/
                 }
                 break;
-
             case 3: //mina
-                arma1.SetActive(false);
-                arma2.SetActive(false);
-                arma3.SetActive(true);
-                camara.transform.position = new Vector3(transform.position.x, transform.position.y, -6);
                 if (Input.GetMouseButtonDown(0) && minaSuelo == false)
                 {
                     Instantiate(minas, arma3.transform.position, Quaternion.identity);
@@ -85,4 +60,47 @@ public class armas : MonoBehaviour
                 break;
         }
 	}
+
+    private void Inventario()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            armaUsando = 1;
+            Tenedor();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            armaUsando = 2;
+            Metralleta();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            armaUsando = 3;
+            Mina();
+        }
+    }
+
+    private void Tenedor()
+    {
+        arma1.SetActive(true);
+        arma2.SetActive(false);
+        arma3.SetActive(false);
+        camara.transform.position = new Vector3(transform.position.x, transform.position.y, -5);
+    }
+
+    private void Metralleta()
+    {
+        arma1.SetActive(false);
+        arma2.SetActive(true);
+        arma3.SetActive(false);
+        camara.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+    }
+
+    private void Mina()
+    {
+        arma1.SetActive(false);
+        arma2.SetActive(false);
+        arma3.SetActive(true);
+        camara.transform.position = new Vector3(transform.position.x, transform.position.y, -6);
+    }
 }
