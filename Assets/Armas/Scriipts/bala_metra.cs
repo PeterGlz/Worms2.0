@@ -10,7 +10,6 @@ public class bala_metra : MonoBehaviour
 	void Update ()
     {
         transform.Translate(direction * vel * Time.deltaTime);
-
         Destroy(gameObject, 2);
     }
 }

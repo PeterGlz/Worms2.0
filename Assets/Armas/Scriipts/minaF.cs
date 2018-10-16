@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class minaF : MonoBehaviour
 {
+    private armas usarmina;
 
-	void Start ()
+    void Start()
     {
-		
-	}
-	
-	void Update ()
+        StartCoroutine(Explosion());
+        usarmina = FindObjectOfType<armas>();
+    }
+
+    IEnumerator Explosion()
     {
-        Destroy(gameObject, 4);
-	}
+        yield return new WaitForSeconds(4);
+        usarmina.minaSuelo = false;
+        Destroy(gameObject);
+    }
 }
