@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -303,16 +303,18 @@ MonoBehaviour:
   arma1: {fileID: 1730137130}
   arma2: {fileID: 1046583439}
   arma3: {fileID: 2109426313}
-  camara: {fileID: 1977894774}
+  transformCamara: {fileID: 1977894774}
   balin: {fileID: 4439691877797002, guid: b60b9669099e66a49901cab1b340caac, type: 2}
   minas: {fileID: 4272109772443974, guid: cdb194aa267f5aa4984ba3f1c5e7e1fc, type: 2}
   uzi: {fileID: 1046583440}
+  botonTenedor: 49
+  botonUzi: 50
+  botonMina: 51
   anim: {fileID: 671038826}
   rayMask:
     serializedVersion: 2
     m_Bits: 256
   municion: 150
-  armaUsando: 1
   minaSuelo: 0
 --- !u!95 &671038826
 Animator:
