@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class controller : MonoBehaviour {
-
+public class controller : MonoBehaviour
+{
 	public float topSpeed = 10f;
 	public float jumpForce;
 	private float moveInput;
@@ -11,6 +11,7 @@ public class controller : MonoBehaviour {
 	private Rigidbody2D rb;
 
 	private bool facingRight = true;
+    private bool canMove;
 
 	private bool isGrounded;
 	public Transform groundedCheck;
@@ -22,6 +23,7 @@ public class controller : MonoBehaviour {
 
 	void Start()
 	{
+        canMove = true;
 		extraJumps = extraJumpsValue;
 		rb = GetComponent<Rigidbody2D> ();
 	}
@@ -30,24 +32,20 @@ public class controller : MonoBehaviour {
 	{
 		isGrounded = Physics2D.OverlapCircle (groundedCheck.position,checkRadius, whatisGrounded);
 
-        if (Input.GetMouseButton(0))
-        {
+        if (Input.GetMouseButton(0) || canMove == false)
             topSpeed = 0f;
-
-        }
         else
+        {
             topSpeed = 10f;
-
-        moveInput = Input.GetAxis ("Horizontal");
-
-		rb.velocity = new Vector2 (moveInput * topSpeed, rb.velocity.y);
+            moveInput = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(moveInput * topSpeed, rb.velocity.y);
+        }  
 
 		if (facingRight == false && moveInput > 0) {
 			Flip ();
 		} else if (facingRight == true && moveInput < 0) {
 			Flip ();
 		}
-
 	}
 
 	void Update()
@@ -62,7 +60,24 @@ public class controller : MonoBehaviour {
 		} else if (Input.GetKeyDown (KeyCode.Space) && extraJumps == 0 && isGrounded == true) {
 			rb.velocity = Vector2.up * jumpForce;
 		}
+
+        ClickM();
 	}
+
+    private void ClickM()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            canMove = false;
+            StartCoroutine(Congelar());
+        }
+    }
+
+    IEnumerator Congelar()
+    {
+        yield return new WaitForSeconds(1);
+        canMove = true;
+    }
 
 	void Flip()
 	{
@@ -71,6 +86,4 @@ public class controller : MonoBehaviour {
 		Scaler.x *= -1;
 		transform.localScale = Scaler;
 	}
-
-
 }

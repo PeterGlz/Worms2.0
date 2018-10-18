@@ -70,7 +70,7 @@ public class armas : MonoBehaviour
                 {
                     anim.SetTrigger("ataque");
                 } break;
-            case 2: //metralleta
+            case 2: //uzi
                 tformUzi.LookAt(lookPos);
                 if (Input.GetMouseButton(0) && municion > 0)
                 {

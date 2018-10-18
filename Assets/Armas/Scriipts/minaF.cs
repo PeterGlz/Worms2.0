@@ -8,14 +8,28 @@ public class minaF : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Explosion());
         usarmina = FindObjectOfType<armas>();
     }
 
-    IEnumerator Explosion()
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Jugador")
+        {
+            //StartCoroutine(Explosion());
+            Explota();
+        }
+    }
+
+    private void Explota()
+    {
+        usarmina.minaSuelo = false;
+        Destroy(gameObject);
+    }
+
+    /*IEnumerator Explosion()
     {
         yield return new WaitForSeconds(4);
         usarmina.minaSuelo = false;
         Destroy(gameObject);
-    }
+    }*/
 }
