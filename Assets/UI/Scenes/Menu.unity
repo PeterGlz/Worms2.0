@@ -1372,9 +1372,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Return
-
-'
+  m_Text: Volver
 --- !u!222 &1382502505
 CanvasRenderer:
   m_ObjectHideFlags: 0

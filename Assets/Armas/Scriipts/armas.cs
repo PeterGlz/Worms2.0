@@ -4,85 +4,109 @@ using UnityEngine;
 
 public class armas : MonoBehaviour
 {
-    public GameObject arma1;
-    public GameObject arma2;
-    public GameObject arma3;
-    public Transform camara;
-    public Transform balin;
-    public Transform minas;
-    public Transform uzi;
-    public Animator anim;
-    public LayerMask rayMask;
+    [SerializeField] private GameObject gObjectTenedor;
+    [SerializeField] private GameObject gObjectUzi;
+    [SerializeField] private GameObject gObjectMina;
 
-    public float municion;
-    public int armaUsando;
+    [SerializeField] private Transform tformCamara;
+    [SerializeField] private Transform tformUzi;
+    [SerializeField] private Transform tformBalaUzi;
+    [SerializeField] private Transform tformMina;
+
+    [SerializeField] private KeyCode btnTenedor;
+    [SerializeField] private KeyCode btnUzi;
+    [SerializeField] private KeyCode btnMina;
+
+    [SerializeField] private Animator anim;
+
+    [SerializeField] private LayerMask rayMask;
+
+    [SerializeField] private float municion;
+    private int armaUsando;
     public bool minaSuelo;
 
     RaycastHit hitInfo;
 
     void Start ()
     {
+        armaUsando = 1;
+        minaSuelo = false;
         anim = GetComponent<Animator>();
     }
 
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        Inventario();
+	}
+
+    private void Inventario()
+    {
+        if (Input.GetKeyDown(btnTenedor))
         {
             armaUsando = 1;
+            Tenedor();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(btnUzi))
         {
             armaUsando = 2;
+            Metralleta();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(btnMina))
         {
             armaUsando = 3;
+            Mina();
         }
 
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         Physics.Raycast(Camera.main.ScreenPointToRay(mousePos), out hitInfo, 100, rayMask);
         Vector3 lookPos = hitInfo.point;
+        /*Debug.DrawLine(Camera.main.ScreenPointToRay(mousePos).origin, hitInfo.point, Color.green);
+        Debug.DrawLine(transform.position, lookPos, Color.red);*/
 
         switch (armaUsando)
         {
             case 1: //tenedor
-                arma1.SetActive(true);
-                arma2.SetActive(false);
-                arma3.SetActive(false);
-                camara.transform.position = new Vector3(transform.position.x, transform.position.y, -5);
                 if (Input.GetMouseButtonDown(0))
                 {
                     anim.SetTrigger("ataque");
-                }
-                break;
-
+                } break;
             case 2: //metralleta
-                arma1.SetActive(false);
-                arma2.SetActive(true);
-                arma3.SetActive(false);
-                camara.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
-                uzi.LookAt(lookPos);
+                tformUzi.LookAt(lookPos);
                 if (Input.GetMouseButton(0) && municion > 0)
                 {
+                    Instantiate(tformBalaUzi, tformUzi.position, tformUzi.rotation);
                     municion--;
-                    Instantiate(balin, uzi.position, uzi.rotation);
-                    /*Debug.DrawLine(Camera.main.ScreenPointToRay(mousePos).origin, hitInfo.point, Color.green);
-                    Debug.DrawLine(transform.position, lookPos, Color.red);*/
-                }
-                break;
-
+                } break;
             case 3: //mina
-                arma1.SetActive(false);
-                arma2.SetActive(false);
-                arma3.SetActive(true);
-                camara.transform.position = new Vector3(transform.position.x, transform.position.y, -6);
-                if (Input.GetMouseButtonDown(0) && minaSuelo == false)
+                if (Input.GetMouseButtonDown(0) && !minaSuelo)
                 {
-                    Instantiate(minas, arma3.transform.position, Quaternion.identity);
+                    Instantiate(tformMina, gObjectMina.transform.position, Quaternion.identity);
                     minaSuelo = true;
-                }
-                break;
+                } break;
         }
-	}
+    }
+
+    private void Tenedor()
+    {
+        gObjectTenedor.SetActive(true);
+        gObjectUzi.SetActive(false);
+        gObjectMina.SetActive(false);
+        tformCamara.transform.position = new Vector3(transform.position.x, transform.position.y, -5);
+    }
+
+    private void Metralleta()
+    {
+        gObjectTenedor.SetActive(false);
+        gObjectUzi.SetActive(true);
+        gObjectMina.SetActive(false);
+        tformCamara.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+    }
+
+    private void Mina()
+    {
+        gObjectTenedor.SetActive(false);
+        gObjectUzi.SetActive(false);
+        gObjectMina.SetActive(true);
+        tformCamara.transform.position = new Vector3(transform.position.x, transform.position.y, -6);
+    }
 }
