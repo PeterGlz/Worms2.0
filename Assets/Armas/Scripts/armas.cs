@@ -27,6 +27,8 @@ public class armas : MonoBehaviour
 
     RaycastHit hitInfo;
 
+    public float i;
+
     void Start ()
     {
         armaUsando = 1;
@@ -78,6 +80,7 @@ public class armas : MonoBehaviour
         Vector3 lookPos = hitInfo.point;
         /*Debug.DrawLine(Camera.main.ScreenPointToRay(mousePos).origin, hitInfo.point, Color.green);
         Debug.DrawLine(transform.position, lookPos, Color.red);*/
+        i = gObjectArmas[3].transform.rotation.x;
 
         switch (armaUsando)
         {
@@ -103,14 +106,15 @@ public class armas : MonoBehaviour
                 tformGranadaMano.LookAt(lookPos);
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
-                    Instantiate(tformGranada, gObjectArmas[3].transform.position, gObjectArmas[3].transform.rotation);
+                    
+                    Instantiate(tformGranada, gObjectArmas[3].transform.position, Quaternion.identity);
                     objSuelo = true;
                 }break;
             case 7: //gas mostaza
                 tformGasMano.LookAt(lookPos);
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
-                    Instantiate(tformGas, gObjectArmas[6].transform.position, gObjectArmas[6].transform.rotation);
+                    Instantiate(tformGas, gObjectArmas[6].transform.position, Quaternion.identity);
                     objSuelo = true;
                 }
                 break;

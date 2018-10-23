@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4158661111737404}
   - component: {fileID: 50594927499582752}
-  - component: {fileID: 61227693203294688}
   - component: {fileID: 114887054798212282}
+  - component: {fileID: 70694105227558902}
   m_Layer: 0
   m_Name: dinamita
   m_TagString: Untagged
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1056562302820450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.007818, y: 2.107784, z: 0}
+  m_LocalPosition: {x: 5.414, y: 2.2098045, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4209012877944780}
@@ -66,13 +66,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1544918661998486}
-  m_LocalRotation: {x: -0.108167, y: -0.6978644, z: 0.103743225, w: 0.7003731}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.016, y: 0.036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4158661111737404}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &23803883984687624
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -134,9 +134,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
---- !u!61 &61227693203294688
-BoxCollider2D:
+  m_Constraints: 4
+--- !u!70 &70694105227558902
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -147,19 +147,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009217873, y: 0.03379911}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.82178617, y: 0.36703467}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.020178795, y: 0.015854597}
+  m_Size: {x: 0.30974483, y: 0.8760457}
+  m_Direction: 0
 --- !u!114 &114887054798212282
 MonoBehaviour:
   m_ObjectHideFlags: 1
