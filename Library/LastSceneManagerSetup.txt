@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/RandomSpawn/Scenes/RandomSpawn.unity
+=======
+- path: Assets/Armas/armas.unity
+>>>>>>> 1b605f8529434a0501d336822e035ce514850350
   isLoaded: 1
   isActive: 1
