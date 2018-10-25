@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -137,7 +137,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 565758376}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a976123634da02942bfe480333953181, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -192,8 +192,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 565758376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -5, z: 0}
-  m_LocalScale: {x: 20.958733, y: 0.6375, z: 14.776}
+  m_LocalPosition: {x: 0.0099998, y: -5, z: 0}
+  m_LocalScale: {x: 53.76, y: 0.6375, z: 5.190218}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -296,7 +296,7 @@ Camera:
   m_GameObject: {fileID: 1402707594}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -310,7 +310,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 25.2
-  field of view: 34.524345
+  field of view: 60.32141
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -334,13 +334,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1402707594}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16, y: 1.96, z: -23.78}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.018728768, y: -0, z: -0, w: 0.9998246}
+  m_LocalPosition: {x: 0.27, y: 9.06, z: -24.58}
+  m_LocalScale: {x: 1, y: 0.7824, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.1460001, y: 0, z: 0}
 --- !u!1 &1411307034
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,10 +378,6 @@ MonoBehaviour:
   - {fileID: 4479990079890078, guid: f8d8f06cf8b2dbe4d8cc28eabdafa8b6, type: 2}
   - {fileID: 4479990079890078, guid: f8d8f06cf8b2dbe4d8cc28eabdafa8b6, type: 2}
   - {fileID: 4479990079890078, guid: f8d8f06cf8b2dbe4d8cc28eabdafa8b6, type: 2}
-  PlaceX1: 0
-  PlaceY1: 0
-  PlaceX2: 0
-  PlaceY2: 0
 --- !u!4 &1411307036
 Transform:
   m_ObjectHideFlags: 0
