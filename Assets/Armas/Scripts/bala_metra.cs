@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class bala_metra : MonoBehaviour
 {
-    [SerializeField] private float vel;
-    [SerializeField] private Vector3 direction = Vector3.right;
+    public float vel;
+    public Vector3 direction = Vector3.right;
 	
 	void Update ()
     {

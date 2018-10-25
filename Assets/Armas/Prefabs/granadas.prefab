@@ -37,8 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4786437019673548}
   - component: {fileID: 114592989037671726}
-  - component: {fileID: 70038498728878100}
-  - component: {fileID: 50638680990124038}
+  - component: {fileID: 65387202187378800}
+  - component: {fileID: 54930116412839176}
   m_Layer: 0
   m_Name: granadas
   m_TagString: Untagged
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754408269102050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0697567, y: 3.3566437, z: -1.183839e-16}
+  m_LocalPosition: {x: 4.5619035, y: 4.0854807, z: -7.375551e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4786381229835588}
@@ -115,41 +115,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1009743739132080}
   m_Mesh: {fileID: 4300014, guid: d4f89a4aac90dbf4ba67ffe07e0a6dd6, type: 3}
---- !u!50 &50638680990124038
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &54930116412839176
+Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754408269102050}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0
+  m_Drag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 120
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!70 &70038498728878100
-CapsuleCollider2D:
+--- !u!65 &65387202187378800
+BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754408269102050}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.009875178, y: 0.029625297}
-  m_Size: {x: 0.42382073, y: 0.69246125}
-  m_Direction: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.26428604, y: 0.62305546, z: 0.21088961}
+  m_Center: {x: 0.017822742, y: 0.025371075, z: -0.0145038515}
 --- !u!114 &114592989037671726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,5 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6193340cc4caf4cbe0f6b4d400f19c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vel: 4
+  vel: 8
   direction: {x: 0, y: 0, z: 1}

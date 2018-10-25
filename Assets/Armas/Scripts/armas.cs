@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class armas : MonoBehaviour
 {
-    [SerializeField] private GameObject[] gObjectArmas;
-    [SerializeField] private KeyCode[] botonArmas;
+    public GameObject[] gObjectArmas;
+    public KeyCode[] botonArmas;
 
-    [SerializeField] private Transform tformCamara;
-    [SerializeField] private Transform tformUzi;
-    [SerializeField] private Transform tformBalaUzi;
-    [SerializeField] private Transform tformMina;
-    [SerializeField] private Transform tformGranadaMano;
-    [SerializeField] private Transform tformGranada;
-    [SerializeField] private Transform tformGasMano;
-    [SerializeField] private Transform tformGas;
-    [SerializeField] private Transform tformDinamita;
+    public Transform tformCamara;
+    public Transform tformUzi;
+    public Transform tformBalaUzi;
+    public Transform tformMina;
+    public Transform tformGranadaMano;
+    public Transform tformGranada;
+    public Transform tformGasMano;
+    public Transform tformGas;
+    public Transform tformDinamita;
 
-    [SerializeField] private Animator anim;
+    public Animator anim;
 
-    [SerializeField] private LayerMask rayMask;
+    public LayerMask rayMask;
 
-    [SerializeField] private float municion;
+    public float municion;
     private int armaUsando;
     public bool objSuelo;
 
@@ -80,7 +80,6 @@ public class armas : MonoBehaviour
         Vector3 lookPos = hitInfo.point;
         /*Debug.DrawLine(Camera.main.ScreenPointToRay(mousePos).origin, hitInfo.point, Color.green);
         Debug.DrawLine(transform.position, lookPos, Color.red);*/
-        i = gObjectArmas[3].transform.rotation.x;
 
         switch (armaUsando)
         {
@@ -106,18 +105,16 @@ public class armas : MonoBehaviour
                 tformGranadaMano.LookAt(lookPos);
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
-                    
-                    Instantiate(tformGranada, gObjectArmas[3].transform.position, Quaternion.identity);
+                    Instantiate(tformGranada, gObjectArmas[3].transform.position, tformGranadaMano.rotation);
                     objSuelo = true;
                 }break;
             case 7: //gas mostaza
                 tformGasMano.LookAt(lookPos);
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
-                    Instantiate(tformGas, gObjectArmas[6].transform.position, Quaternion.identity);
+                    Instantiate(tformGas, gObjectArmas[6].transform.position, tformGasMano.rotation);
                     objSuelo = true;
-                }
-                break;
+                }break;
             case 9: //dinamita
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {

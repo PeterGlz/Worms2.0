@@ -6,7 +6,7 @@ public class gasColider : MonoBehaviour
 {
     private armas usarGas;
     public float vel;
-    [SerializeField] private Vector3 direction = Vector3.right;
+    public Vector3 direction = Vector3.right;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class gasColider : MonoBehaviour
         transform.Translate(direction * vel * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Piso")
         {
