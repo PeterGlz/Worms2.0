@@ -68,6 +68,8 @@
     <Compile Include="Assets\Armas\Scripts\gasColider.cs" />
     <Compile Include="Assets\Armas\Scripts\granadaController.cs" />
     <Compile Include="Assets\Armas\Scripts\minaController.cs" />
+    <Compile Include="Assets\Armas\Scripts\misilPollo.cs" />
+    <Compile Include="Assets\Armas\Scripts\MisilSalchicha.cs" />
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBone.cs" />
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneCollider.cs" />
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneColliderBase.cs" />

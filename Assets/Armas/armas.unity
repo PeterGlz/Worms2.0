@@ -1660,19 +1660,6 @@ MonoBehaviour:
   - {fileID: 4174218434920358, guid: 8f3a7b8d6f77db640a7ea04fe16b49c8, type: 2}
   - {fileID: 4158661111737404, guid: 9bca2c6aeccd37f44b912b7548460636, type: 2}
   tformCamara: {fileID: 1977894774}
-  tformUzi: {fileID: 1046583440}
-  tformBalaUzi: {fileID: 4439691877797002, guid: b60b9669099e66a49901cab1b340caac,
-    type: 2}
-  tformMina: {fileID: 4318890378540766, guid: 6e435409f5a84624a99f267c84c2c67f, type: 2}
-  tformGranadaMano: {fileID: 1454132326}
-  tformGranada: {fileID: 4786437019673548, guid: 75f87124c2d23364ebe93826fd194788,
-    type: 2}
-  tformGasMano: {fileID: 1681578757}
-  tformGas: {fileID: 4774803742318580, guid: 2b03db614fb610c4f840eaf5210f5bde, type: 2}
-  tformDinamita: {fileID: 4158661111737404, guid: 9bca2c6aeccd37f44b912b7548460636,
-    type: 2}
-  tformCohete: {fileID: 1374679718}
-  tformMisil: {fileID: 595892238}
   anim: {fileID: 671038826}
   rayMask:
     serializedVersion: 2
@@ -2148,14 +2135,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1374679717}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.393, y: -0.06, z: 0}
+  m_LocalRotation: {x: 0.35355335, y: 0.61237246, z: 0.35355335, w: 0.61237246}
+  m_LocalPosition: {x: 0.669, y: -0.105, z: -0.088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1977877993}
   m_Father: {fileID: 671038824}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: -90, z: -120}
 --- !u!1001 &1435762906
 Prefab:
   m_ObjectHideFlags: 0
@@ -2214,6 +2201,10 @@ Prefab:
     - target: {fileID: 4240619538916794, guid: 0abc28811a318fa4cb9d7f2c83ce4da9, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240619538916794, guid: 0abc28811a318fa4cb9d7f2c83ce4da9, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0abc28811a318fa4cb9d7f2c83ce4da9, type: 2}

@@ -10,16 +10,6 @@ public class armas : MonoBehaviour
     public Transform[] prefabArmas;
 
     public Transform tformCamara;
-    /*public Transform tformUzi;
-    public Transform tformBalaUzi;
-    public Transform tformMina;
-    public Transform tformGranadaMano;
-    public Transform tformGranada;
-    public Transform tformGasMano;
-    public Transform tformGas;
-    public Transform tformDinamita;
-    public Transform tformCohete;
-    public Transform tformMisil;*/
 
     public Animator anim;
 
@@ -46,47 +36,47 @@ public class armas : MonoBehaviour
 
     private void Inventario()
     {
-        if (Input.GetKeyDown(botonArmas[0]))
+        if (Input.GetKeyDown(botonArmas[0]))//tenedor en mano
         {
             armaUsando = 0;
             CambioArma(0, -5);
         }
-        else if (Input.GetKeyDown(botonArmas[1]))
+        else if (Input.GetKeyDown(botonArmas[1]))//pimientero en mano
         {
             armaUsando = 1;
             CambioArma(1, -15);
         }
-        else if (Input.GetKeyDown(botonArmas[2]))
+        else if (Input.GetKeyDown(botonArmas[2]))//huevo en mano
         {
             armaUsando = 2;
             CambioArma(2, -6);
         }
-        else if (Input.GetKeyDown(botonArmas[3]))
+        else if (Input.GetKeyDown(botonArmas[3]))//albondiga en mano
         {
             armaUsando = 3;
             CambioArma(3, -9);
         }
-        else if (Input.GetKeyDown(botonArmas[4]))
+        else if (Input.GetKeyDown(botonArmas[4]))//tenedor en mano
         {
             armaUsando = 4;
             CambioArma(4, -13);
         }
-        else if (Input.GetKeyDown(botonArmas[5]))
+        else if (Input.GetKeyDown(botonArmas[5]))//tenedor en mano
         {
             armaUsando = 5;
             CambioArma(5, -5);
         }
-        else if (Input.GetKeyDown(botonArmas[6]))
+        else if (Input.GetKeyDown(botonArmas[6]))//tenedor en mano
         {
             armaUsando = 6;
             CambioArma(6, -9);
         }
-        else if (Input.GetKeyDown(botonArmas[7]))
+        else if (Input.GetKeyDown(botonArmas[7]))//tenedor en mano
         {
             armaUsando = 7;
             CambioArma(7, -13);
         }
-        else if (Input.GetKeyDown(botonArmas[8]))
+        else if (Input.GetKeyDown(botonArmas[8]))//tenedor en mano
         {
             armaUsando = 8;
             CambioArma(8, -6);
@@ -100,55 +90,57 @@ public class armas : MonoBehaviour
 
         switch (armaUsando)
         {
-            case 0: //tenedor
+            case 0: //usar tenedor
                 if (Input.GetMouseButtonDown(0))
                 {
                     anim.SetTrigger("ataque");
                 } break;
-            case 1: //uzi
+            case 1: //usar pimientero uzi
                 tformArmas[0].LookAt(lookPos);
                 if (Input.GetMouseButton(0) && municion > 0)
                 {
                     Instantiate(prefabArmas[0], tformArmas[0].position, tformArmas[0].rotation);
                     municion--;
                 } break;
-            case 2: //mina
+            case 2: //usar mina huevo
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
                     Instantiate(prefabArmas[1], gObjectArmas[2].transform.position, Quaternion.identity);
                     objSuelo = true;
                 } break;
-            case 3://granada
+            case 3://usar granada albondiga
                 tformArmas[1].LookAt(lookPos);
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
                     Instantiate(prefabArmas[2], tformArmas[1].transform.position, tformArmas[1].rotation);
                     objSuelo = true;
                 }break;
-            case 4: //hot-dog cohete
+            case 4: //usar hot-dog cohete
                 tformArmas[2].LookAt(lookPos);
                 if (Input.GetMouseButtonDown(0))
                 {
-
+                    Instantiate(prefabArmas[3], tformArmas[2].position, tformArmas[2].rotation);
+                    objSuelo = true;
                 }
                 break;
-            case 5: //baguette
+            case 5: //usar baguette
                 break;
-            case 6: //gas mostaza
+            case 6: //usar gas mostaza
                 tformArmas[3].LookAt(lookPos);
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
                     Instantiate(prefabArmas[4], tformArmas[3].transform.position, tformArmas[3].rotation);
                     objSuelo = true;
                 }break;
-            case 7: //pollo misil
+            case 7: //usar pollo misil
                 tformArmas[4].LookAt(lookPos);
                 if (Input.GetMouseButtonDown(0))
                 {
-
+                    Instantiate(prefabArmas[5], tformArmas[4].transform.position, tformArmas[4].rotation);
+                    objSuelo = true;
                 }
                 break;
-            case 8: //dinamita
+            case 8: //usar salami dinamita
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
                     Instantiate(prefabArmas[6], gObjectArmas[8].transform.position, Quaternion.identity);
