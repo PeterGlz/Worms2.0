@@ -30,6 +30,8 @@ public class gasColider : MonoBehaviour
     IEnumerator Explosion()
     {
         yield return new WaitForSeconds(4);
+        //activa explosion
+        yield return new WaitForSeconds(1.5f);
         usarGas.objSuelo = false;
         Destroy(gameObject);
     }

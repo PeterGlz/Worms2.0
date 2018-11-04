@@ -4,17 +4,37 @@ using UnityEngine;
 
 public class misilPollo : MonoBehaviour
 {
+    private armas usarPollo;
     public float vel;
     public Vector3 direction = Vector3.right;
 
     void Start()
     {
-
+        usarPollo = FindObjectOfType<armas>();
+        StartCoroutine(Explosion(8));
     }
 
     void Update()
     {
         transform.Translate(direction * vel * Time.deltaTime);
-        Destroy(gameObject, 10);
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Piso")
+        {
+            StartCoroutine(Explosion(0.1f));
+        }
+    }
+
+    IEnumerator Explosion(float duracion)
+    {
+        yield return new WaitForSeconds(duracion);
+        vel = 0;
+        //activa explosion
+        yield return new WaitForSeconds(1.5f);
+        usarPollo.objSuelo = false;
+        Destroy(gameObject);
     }
 }

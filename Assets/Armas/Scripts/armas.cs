@@ -117,7 +117,7 @@ public class armas : MonoBehaviour
                 }break;
             case 4: //usar hot-dog cohete
                 tformArmas[2].LookAt(lookPos);
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
                     Instantiate(prefabArmas[3], tformArmas[2].position, tformArmas[2].rotation);
                     objSuelo = true;
@@ -134,7 +134,7 @@ public class armas : MonoBehaviour
                 }break;
             case 7: //usar pollo misil
                 tformArmas[4].LookAt(lookPos);
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
                     Instantiate(prefabArmas[5], tformArmas[4].transform.position, tformArmas[4].rotation);
                     objSuelo = true;
