@@ -5,6 +5,7 @@ using UnityEngine;
 public class minaController : MonoBehaviour
 {
     private armas usarMina;
+    public GameObject explotar;
 
     void Start()
     {
@@ -15,21 +16,15 @@ public class minaController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Jugador")
         {
-            //StartCoroutine(Explosion());
-            Explota();
+            StartCoroutine(Explosion());
         }
     }
 
-    private void Explota()
+    IEnumerator Explosion()
     {
+        explotar.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         usarMina.objSuelo = false;
         Destroy(gameObject);
     }
-
-    /*IEnumerator Explosion()
-    {
-        yield return new WaitForSeconds(4);
-        usarmina.minaSuelo = false;
-        Destroy(gameObject);
-    }*/
 }

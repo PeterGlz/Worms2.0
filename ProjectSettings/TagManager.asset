@@ -9,6 +9,7 @@ TagManager:
   - Jugador
   - Piso
   - explosion
+  - gas
   layers:
   - Default
   - TransparentFX

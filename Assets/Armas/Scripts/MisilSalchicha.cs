@@ -33,7 +33,7 @@ public class MisilSalchicha : MonoBehaviour
         yield return new WaitForSeconds(duracion);
         vel = 0;
         explotar.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         usarSalchicha.objSuelo = false;
         Destroy(gameObject);
     }

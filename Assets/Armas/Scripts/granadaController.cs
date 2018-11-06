@@ -5,6 +5,7 @@ using UnityEngine;
 public class granadaController : MonoBehaviour
 {
     private armas usarGranada;
+    public GameObject explotar;
     public float vel;
     public Vector3 direction = Vector3.right;
 
@@ -30,6 +31,8 @@ public class granadaController : MonoBehaviour
     IEnumerator Explosion()
     {
         yield return new WaitForSeconds(4);
+        explotar.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
         usarGranada.objSuelo = false;
         Destroy(gameObject);
     }

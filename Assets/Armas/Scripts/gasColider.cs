@@ -5,6 +5,7 @@ using UnityEngine;
 public class gasColider : MonoBehaviour
 {
     private armas usarGas;
+    public GameObject explotar;
     public float vel;
     public Vector3 direction = Vector3.right;
 
@@ -30,8 +31,8 @@ public class gasColider : MonoBehaviour
     IEnumerator Explosion()
     {
         yield return new WaitForSeconds(4);
-        //activa explosion
-        yield return new WaitForSeconds(1.5f);
+        explotar.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         usarGas.objSuelo = false;
         Destroy(gameObject);
     }

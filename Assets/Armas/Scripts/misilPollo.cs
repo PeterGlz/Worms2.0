@@ -5,6 +5,7 @@ using UnityEngine;
 public class misilPollo : MonoBehaviour
 {
     private armas usarPollo;
+    public GameObject explotar;
     public float vel;
     public Vector3 direction = Vector3.right;
 
@@ -17,7 +18,6 @@ public class misilPollo : MonoBehaviour
     void Update()
     {
         transform.Translate(direction * vel * Time.deltaTime);
-        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -32,8 +32,8 @@ public class misilPollo : MonoBehaviour
     {
         yield return new WaitForSeconds(duracion);
         vel = 0;
-        //activa explosion
-        yield return new WaitForSeconds(1.5f);
+        explotar.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         usarPollo.objSuelo = false;
         Destroy(gameObject);
     }
