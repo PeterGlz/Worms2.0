@@ -16,6 +16,32 @@ public class MenuController : MonoBehaviour {
 
     public AudioMixer audioMixer;
 
+    public Dropdown _resolutionDropdown;
+    Resolution[] _resolutions;
+
+    void Start()
+    {
+        _resolutions = Screen.resolutions;
+        _resolutionDropdown.ClearOptions();
+
+        List<string> options = new List<string>();
+
+        int _currentResolution = 0;
+        for(int i=0; i < _resolutions.Length; i++)
+        {
+            string option = _resolutions[i].width + " x " + _resolutions[i].height;
+            options.Add(option);
+
+            if(_resolutions[i].width == Screen.currentResolution.width && _resolutions[i].height == Screen.currentResolution.height)
+            {
+                _currentResolution = i;
+            }
+        }
+        _resolutionDropdown.AddOptions(options);
+        _resolutionDropdown.value = _currentResolution;
+        _resolutionDropdown.RefreshShownValue();
+    }
+
     void Update()
     {
         if (inMenu)
@@ -71,6 +97,22 @@ public class MenuController : MonoBehaviour {
     public void setVolume(float volume)
     {
         audioMixer.SetFloat("Volume", volume);
+    }
+
+    public void setQuality(int _quality)
+    {
+        QualitySettings.SetQualityLevel(_quality);
+    }
+
+    public void setFullScreen(bool _fs)
+    {
+        Screen.fullScreen = _fs;
+    }
+
+    public void setResolution(int _resolution)
+    {
+        Resolution resolution = _resolutions[_resolution];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     ///-------JUEGO--------------------
