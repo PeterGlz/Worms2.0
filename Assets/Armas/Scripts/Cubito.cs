@@ -17,7 +17,6 @@ public class Cubito : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("algo");
         if (collision.gameObject.tag == "explosion")
         {
             print("exploto");

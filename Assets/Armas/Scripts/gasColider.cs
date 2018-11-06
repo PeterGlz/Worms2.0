@@ -32,7 +32,7 @@ public class gasColider : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         explotar.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(5);
         usarGas.objSuelo = false;
         Destroy(gameObject);
     }
