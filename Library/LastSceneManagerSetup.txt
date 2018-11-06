@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Mapa/Mapa.unity
+=======
+- path: Assets/UI/Scenes/Menu.unity
+>>>>>>> bc29a7f40f8eb1fb070ecbfe0baa808aa71d2799
   isLoaded: 1
   isActive: 1
