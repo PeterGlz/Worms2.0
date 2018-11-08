@@ -74,11 +74,16 @@
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneCollider.cs" />
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneColliderBase.cs" />
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBonePlaneCollider.cs" />
+    <Compile Include="Assets\Mapa\Generar.cs" />
+    <Compile Include="Assets\Mapa\Pasar_nivel\Timer.cs" />
+    <Compile Include="Assets\Mapa\randomInstante.cs" />
+    <Compile Include="Assets\Mapa\spawn.cs" />
     <Compile Include="Assets\Personaje\controller.cs" />
     <Compile Include="Assets\Personaje\VidaJugador.cs" />
     <Compile Include="Assets\RandomSpawn\Scripts\RandomSpawn.cs" />
     <Compile Include="Assets\UI\Scripts\Inventory.cs" />
     <Compile Include="Assets\UI\Scripts\MenuController.cs" />
+    <None Include="Assets\Mapa\FREE Food Pack\Shaders\Food.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Alumno/Documents/GitHub/Worms2.0/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

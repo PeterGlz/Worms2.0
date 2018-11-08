@@ -1,12 +1,1 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Armas/armas.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Mapa/Mapa.unity
-=======
-- path: Assets/UI/Scenes/Menu.unity
->>>>>>> bc29a7f40f8eb1fb070ecbfe0baa808aa71d2799
->>>>>>> 34102db9f4c5ef57ee697bd762a5fc8772bab074
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
