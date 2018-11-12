@@ -72,6 +72,7 @@ public class MenuController : MonoBehaviour {
     {
         Debug.Log("Play");
         //SceneManager.LoadScene("armas");
+        SceneManager.LoadScene("enJuego");
     }
 
     public void Opciones ()
@@ -117,12 +118,4 @@ public class MenuController : MonoBehaviour {
 
     ///-------JUEGO--------------------
     ///
-
-    public void Continue()
-    {
-        Time.timeScale = 1;
-        //pnlPause.SetActive(false);
-
-    }
-
 }
