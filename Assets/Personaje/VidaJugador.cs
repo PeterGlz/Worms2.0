@@ -15,10 +15,11 @@ public class VidaJugador : MonoBehaviour
     {
         if(collision.gameObject.tag == "explosion")
         {
-            vida = vida -20;
+            vida = vida-20;
             Debug.Log(vida);
         }
-        else if (collision.gameObject.tag == "bala_uzi")
+
+        if (collision.gameObject.tag == "bala_uzi")
         {
             vida--;
             Debug.Log(vida);
@@ -29,7 +30,7 @@ public class VidaJugador : MonoBehaviour
     {
         if (collision.gameObject.tag == "gas")
         {
-            vida = vida - 5;
+            vida = vida-5;
             Debug.Log(vida);
         }
     }

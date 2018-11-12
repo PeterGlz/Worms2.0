@@ -8,11 +8,13 @@ public class gasColider : MonoBehaviour
     public GameObject explotar;
     public float vel;
     public Vector3 direction = Vector3.right;
+    private Turnos cambiandoT;
 
     void Start()
     {
         usarGas = FindObjectOfType<armas>();
         StartCoroutine(Explosion());
+        cambiandoT = FindObjectOfType<Turnos>();
     }
 
     void Update()
@@ -34,6 +36,7 @@ public class gasColider : MonoBehaviour
         explotar.SetActive(true);
         yield return new WaitForSeconds(5);
         usarGas.objSuelo = false;
+        cambiandoT.CambiarTurno();
         Destroy(gameObject);
     }
 }

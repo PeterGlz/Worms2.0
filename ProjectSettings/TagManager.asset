@@ -10,6 +10,7 @@ TagManager:
   - Piso
   - explosion
   - gas
+  - Inventario
   layers:
   - Default
   - TransparentFX

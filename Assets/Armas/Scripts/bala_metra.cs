@@ -12,4 +12,9 @@ public class bala_metra : MonoBehaviour
         transform.Translate(direction * vel * Time.deltaTime);
         Destroy(gameObject, 2);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
 }
