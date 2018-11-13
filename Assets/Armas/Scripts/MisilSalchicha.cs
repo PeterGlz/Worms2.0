@@ -8,11 +8,13 @@ public class MisilSalchicha : MonoBehaviour
     public GameObject explotar;
     public float vel;
     public Vector3 direction = Vector3.right;
+    private Turnos cambiandoT;
 
     void Start ()
     {
 		usarSalchicha = FindObjectOfType<armas>();
         StartCoroutine(Explosion(8));
+        cambiandoT = FindObjectOfType<Turnos>();
     }
 	
 	void Update ()
@@ -35,6 +37,7 @@ public class MisilSalchicha : MonoBehaviour
         explotar.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         usarSalchicha.objSuelo = false;
+        cambiandoT.CambiarTurno();
         Destroy(gameObject);
     }
 }

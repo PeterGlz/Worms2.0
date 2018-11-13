@@ -8,10 +8,12 @@ public class granadaController : MonoBehaviour
     public GameObject explotar;
     public float vel;
     public Vector3 direction = Vector3.right;
+    private Turnos cambiandoT;
 
     void Start ()
     {
         usarGranada = FindObjectOfType<armas>();
+        cambiandoT = FindObjectOfType<Turnos>();
         StartCoroutine(Explosion());
     }
 	
@@ -34,6 +36,7 @@ public class granadaController : MonoBehaviour
         explotar.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         usarGranada.objSuelo = false;
+        cambiandoT.CambiarTurno();
         Destroy(gameObject);
     }
 }

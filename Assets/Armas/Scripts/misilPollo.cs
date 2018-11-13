@@ -8,11 +8,13 @@ public class misilPollo : MonoBehaviour
     public GameObject explotar;
     public float vel;
     public Vector3 direction = Vector3.right;
+    private Turnos cambiandoT;
 
     void Start()
     {
         usarPollo = FindObjectOfType<armas>();
         StartCoroutine(Explosion(8));
+        cambiandoT = FindObjectOfType<Turnos>();
     }
 
     void Update()
@@ -35,6 +37,7 @@ public class misilPollo : MonoBehaviour
         explotar.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         usarPollo.objSuelo = false;
+        cambiandoT.CambiarTurno();
         Destroy(gameObject);
     }
 }
