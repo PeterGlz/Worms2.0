@@ -11,18 +11,20 @@ public class Turnos : MonoBehaviour
     void Start()
     {
         turno = 0;
+        StartCoroutine(CrearTurnos());
+    }
+
+    IEnumerator CrearTurnos()
+    {
+        yield return new WaitForSeconds(1);
         jugadores = GameObject.FindGameObjectsWithTag("Inventario");
-        for (int i = 0; i<jugadores.Length; i++)
+        for (int i = 0; i < jugadores.Length; i++)
         {
-            if(i != turno)
+            Debug.Log("Funciona");
+            if (i != turno)
                 jugadores[i].SetActive(false);
         }
     }
-
-    void Update ()
-    {
-
-	}
 
     public void CambiarTurno()
     {
@@ -39,6 +41,4 @@ public class Turnos : MonoBehaviour
                 jugadores[i].SetActive(true);
         }
     }
-
-
 }
