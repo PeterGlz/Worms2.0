@@ -305,7 +305,6 @@
   <ItemGroup>
     <Compile Include="Assets\Armas\Scripts\armas.cs" />
     <Compile Include="Assets\Armas\Scripts\bala_metra.cs" />
-    <Compile Include="Assets\Armas\Scripts\controller.cs" />
     <Compile Include="Assets\Armas\Scripts\Cubito.cs" />
     <Compile Include="Assets\Armas\Scripts\dinamitaController.cs" />
     <Compile Include="Assets\Armas\Scripts\gasColider.cs" />
@@ -313,6 +312,7 @@
     <Compile Include="Assets\Armas\Scripts\minaController.cs" />
     <Compile Include="Assets\Armas\Scripts\misilPollo.cs" />
     <Compile Include="Assets\Armas\Scripts\MisilSalchicha.cs" />
+    <Compile Include="Assets\Armas\Turnos.cs" />
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBone.cs" />
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneCollider.cs" />
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneColliderBase.cs" />
@@ -321,9 +321,13 @@
     <Compile Include="Assets\Mapa\Pasar_nivel\Timer.cs" />
     <Compile Include="Assets\Mapa\randomInstante.cs" />
     <Compile Include="Assets\Mapa\spawn.cs" />
+    <Compile Include="Assets\Personaje\controller.cs" />
+    <Compile Include="Assets\Personaje\VidaJugador.cs" />
     <Compile Include="Assets\RandomSpawn\Scripts\RandomSpawn.cs" />
     <Compile Include="Assets\UI\Scripts\Inventory.cs" />
     <Compile Include="Assets\UI\Scripts\MenuController.cs" />
+    <Compile Include="Assets\UI\Scripts\PauseController.cs" />
+    <Compile Include="Assets\UI\Scripts\pController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mapa\FREE Food Pack\Shaders\Food.shader" />
