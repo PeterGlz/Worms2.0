@@ -303,15 +303,27 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Armas\Scriipts\armas.cs" />
-    <Compile Include="Assets\Armas\Scriipts\bala_metra.cs" />
-    <Compile Include="Assets\Armas\Scriipts\minaF.cs" />
+    <Compile Include="Assets\Armas\Scripts\armas.cs" />
+    <Compile Include="Assets\Armas\Scripts\bala_metra.cs" />
+    <Compile Include="Assets\Armas\Scripts\controller.cs" />
+    <Compile Include="Assets\Armas\Scripts\Cubito.cs" />
+    <Compile Include="Assets\Armas\Scripts\dinamitaController.cs" />
+    <Compile Include="Assets\Armas\Scripts\gasColider.cs" />
+    <Compile Include="Assets\Armas\Scripts\granadaController.cs" />
+    <Compile Include="Assets\Armas\Scripts\minaController.cs" />
+    <Compile Include="Assets\Armas\Scripts\misilPollo.cs" />
+    <Compile Include="Assets\Armas\Scripts\MisilSalchicha.cs" />
+    <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBone.cs" />
+    <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneCollider.cs" />
+    <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneColliderBase.cs" />
+    <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBonePlaneCollider.cs" />
     <Compile Include="Assets\Mapa\Generar.cs" />
     <Compile Include="Assets\Mapa\Pasar_nivel\Timer.cs" />
     <Compile Include="Assets\Mapa\randomInstante.cs" />
     <Compile Include="Assets\Mapa\spawn.cs" />
     <Compile Include="Assets\RandomSpawn\Scripts\RandomSpawn.cs" />
-    <Compile Include="Assets\UI\MenuController.cs" />
+    <Compile Include="Assets\UI\Scripts\Inventory.cs" />
+    <Compile Include="Assets\UI\Scripts\MenuController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mapa\FREE Food Pack\Shaders\Food.shader" />
