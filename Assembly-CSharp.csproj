@@ -70,7 +70,6 @@
     <Compile Include="Assets\Armas\Scripts\minaController.cs" />
     <Compile Include="Assets\Armas\Scripts\misilPollo.cs" />
     <Compile Include="Assets\Armas\Scripts\MisilSalchicha.cs" />
-    <Compile Include="Assets\Armas\Turnos.cs" />
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBone.cs" />
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneCollider.cs" />
     <Compile Include="Assets\Arte\DynamicBone\Scripts\DynamicBoneColliderBase.cs" />
@@ -80,6 +79,7 @@
     <Compile Include="Assets\Mapa\randomInstante.cs" />
     <Compile Include="Assets\Mapa\spawn.cs" />
     <Compile Include="Assets\Personaje\controller.cs" />
+    <Compile Include="Assets\Personaje\Turnos.cs" />
     <Compile Include="Assets\Personaje\VidaJugador.cs" />
     <Compile Include="Assets\RandomSpawn\Scripts\RandomSpawn.cs" />
     <Compile Include="Assets\UI\Scripts\Inventory.cs" />
