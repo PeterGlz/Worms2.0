@@ -9,7 +9,7 @@ public class armas : MonoBehaviour
     public Transform[] tformArmas;
     public Transform[] prefabArmas;
 
-    public Transform tformCamara;
+    public GameObject tformCamara;
 
     public Animator anim;
 
@@ -32,7 +32,7 @@ public class armas : MonoBehaviour
     void Update ()
     {
         Inventario();
-	}
+    }
 
     private void Inventario()
     {
@@ -56,27 +56,27 @@ public class armas : MonoBehaviour
             armaUsando = 3;
             CambioArma(3, -9);
         }
-        else if (Input.GetKeyDown(botonArmas[4]))//tenedor en mano
+        else if (Input.GetKeyDown(botonArmas[4]))// en mano
         {
             armaUsando = 4;
             CambioArma(4, -13);
         }
-        else if (Input.GetKeyDown(botonArmas[5]))//tenedor en mano
+        else if (Input.GetKeyDown(botonArmas[5]))// en mano
         {
             armaUsando = 5;
             CambioArma(5, -5);
         }
-        else if (Input.GetKeyDown(botonArmas[6]))//tenedor en mano
+        else if (Input.GetKeyDown(botonArmas[6]))// en mano
         {
             armaUsando = 6;
             CambioArma(6, -9);
         }
-        else if (Input.GetKeyDown(botonArmas[7]))//tenedor en mano
+        else if (Input.GetKeyDown(botonArmas[7]))// en mano
         {
             armaUsando = 7;
             CambioArma(7, -13);
         }
-        else if (Input.GetKeyDown(botonArmas[8]))//tenedor en mano
+        else if (Input.GetKeyDown(botonArmas[8]))// en mano
         {
             armaUsando = 8;
             CambioArma(8, -6);
@@ -138,6 +138,7 @@ public class armas : MonoBehaviour
                 {
                     Instantiate(prefabArmas[5], tformArmas[4].transform.position, tformArmas[4].rotation);
                     objSuelo = true;
+                    tformCamara.SetActive(false);
                 }
                 break;
             case 8: //usar salami dinamita

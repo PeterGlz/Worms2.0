@@ -16,7 +16,7 @@ public class Turnos : MonoBehaviour
 
     IEnumerator CrearTurnos()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         jugadores = GameObject.FindGameObjectsWithTag("Inventario");
         for (int i = 0; i < jugadores.Length; i++)
         {

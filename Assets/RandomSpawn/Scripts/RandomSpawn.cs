@@ -10,6 +10,18 @@ public class RandomSpawn : MonoBehaviour
 
     void Start ()
     {
+        StartCoroutine(SpawnP());
+
+        /*for (int i = 4; i < player1.Length; i++)
+        {
+            Instantiate(player1[i], new Vector3(Random.Range(-24, -20), Random.Range(-3, 15), 0), Quaternion.identity);
+            Instantiate(player2[i], new Vector3(Random.Range(5, 9), Random.Range(-3, 15), 0), Quaternion.identity);
+        }*/
+    }
+
+    IEnumerator SpawnP()
+    {
+        yield return new WaitForSeconds(1);
         Instantiate(player1[0], new Vector3(Random.Range(-24, -20), Random.Range(-3, 15), 0), Quaternion.identity);
         Instantiate(player2[0], new Vector3(Random.Range(5, 9), Random.Range(-3, 15), 0), Quaternion.identity);
 
@@ -21,11 +33,5 @@ public class RandomSpawn : MonoBehaviour
 
         Instantiate(player1[3], new Vector3(Random.Range(-9, -5), Random.Range(-3, 15), 0), Quaternion.identity);
         Instantiate(player2[3], new Vector3(Random.Range(20, 24), Random.Range(-3, 15), 0), Quaternion.identity);
-
-        /*for (int i = 4; i < player1.Length; i++)
-        {
-            Instantiate(player1[i], new Vector3(Random.Range(-24, -20), Random.Range(-3, 15), 0), Quaternion.identity);
-            Instantiate(player2[i], new Vector3(Random.Range(5, 9), Random.Range(-3, 15), 0), Quaternion.identity);
-        }*/
     }
 }
