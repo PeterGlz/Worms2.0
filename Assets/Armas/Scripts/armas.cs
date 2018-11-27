@@ -19,6 +19,8 @@ public class armas : MonoBehaviour
     private int armaUsando;
     public bool objSuelo;
 
+    private Turnos cambiandoT;
+
     RaycastHit hitInfo;
 
     void Start ()
@@ -27,6 +29,7 @@ public class armas : MonoBehaviour
         gObjectArmas[0].SetActive(true);
         objSuelo = false;
         anim = GetComponent<Animator>();
+        cambiandoT = FindObjectOfType<Turnos>();
     }
 
     void Update ()
@@ -37,50 +40,23 @@ public class armas : MonoBehaviour
     private void Inventario()
     {
         if (Input.GetKeyDown(botonArmas[0]))//tenedor en mano
-        {
-            armaUsando = 0;
             CambioArma(0, -5);
-        }
         else if (Input.GetKeyDown(botonArmas[1]))//pimientero en mano
-        {
-            armaUsando = 1;
             CambioArma(1, -15);
-        }
         else if (Input.GetKeyDown(botonArmas[2]))//huevo en mano
-        {
-            armaUsando = 2;
             CambioArma(2, -6);
-        }
         else if (Input.GetKeyDown(botonArmas[3]))//albondiga en mano
-        {
-            armaUsando = 3;
             CambioArma(3, -9);
-        }
         else if (Input.GetKeyDown(botonArmas[4]))//hot dog en mano
-        {
-            armaUsando = 4;
             CambioArma(4, -13);
-        }
         else if (Input.GetKeyDown(botonArmas[5]))//baguette en mano
-        {
-            armaUsando = 5;
             CambioArma(5, -5);
-        }
         else if (Input.GetKeyDown(botonArmas[6]))//mostaza en mano
-        {
-            armaUsando = 6;
             CambioArma(6, -9);
-        }
         else if (Input.GetKeyDown(botonArmas[7]))//pollo en mano
-        {
-            armaUsando = 7;
             CambioArma(7, -13);
-        }
         else if (Input.GetKeyDown(botonArmas[8]))//salami en mano
-        {
-            armaUsando = 8;
             CambioArma(8, -6);
-        }
 
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         Physics.Raycast(Camera.main.ScreenPointToRay(mousePos), out hitInfo, 100, rayMask);
@@ -101,6 +77,10 @@ public class armas : MonoBehaviour
                 {
                     Instantiate(prefabArmas[0], tformArmas[0].position, tformArmas[0].rotation);
                     municion--;
+                    if(municion <= 0)
+                    {
+                        cambiandoT.CambiarTurno();
+                    }
                 } break;
             case 2: //usar mina huevo
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
@@ -121,8 +101,7 @@ public class armas : MonoBehaviour
                 {
                     Instantiate(prefabArmas[3], tformArmas[2].position, tformArmas[2].rotation);
                     objSuelo = true;
-                }
-                break;
+                }break;
             case 5: //usar baguette
                 break;
             case 6: //usar gas mostaza
@@ -140,8 +119,7 @@ public class armas : MonoBehaviour
                     objSuelo = true;
                     tformCamara.SetActive(false);
                     tformCamara.SetActive(true);
-                }
-                break;
+                }break;
             case 8: //usar salami dinamita
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
@@ -153,6 +131,8 @@ public class armas : MonoBehaviour
 
     private void CambioArma(int armaU, int distanciaCam)
     {
+        armaUsando = armaU;
+
         for(int i = 0; i < 9; i++)
         {
             if(i != armaU)
