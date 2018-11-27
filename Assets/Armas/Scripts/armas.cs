@@ -56,27 +56,27 @@ public class armas : MonoBehaviour
             armaUsando = 3;
             CambioArma(3, -9);
         }
-        else if (Input.GetKeyDown(botonArmas[4]))// en mano
+        else if (Input.GetKeyDown(botonArmas[4]))//hot dog en mano
         {
             armaUsando = 4;
             CambioArma(4, -13);
         }
-        else if (Input.GetKeyDown(botonArmas[5]))// en mano
+        else if (Input.GetKeyDown(botonArmas[5]))//baguette en mano
         {
             armaUsando = 5;
             CambioArma(5, -5);
         }
-        else if (Input.GetKeyDown(botonArmas[6]))// en mano
+        else if (Input.GetKeyDown(botonArmas[6]))//mostaza en mano
         {
             armaUsando = 6;
             CambioArma(6, -9);
         }
-        else if (Input.GetKeyDown(botonArmas[7]))// en mano
+        else if (Input.GetKeyDown(botonArmas[7]))//pollo en mano
         {
             armaUsando = 7;
             CambioArma(7, -13);
         }
-        else if (Input.GetKeyDown(botonArmas[8]))// en mano
+        else if (Input.GetKeyDown(botonArmas[8]))//salami en mano
         {
             armaUsando = 8;
             CambioArma(8, -6);
@@ -139,6 +139,7 @@ public class armas : MonoBehaviour
                     Instantiate(prefabArmas[5], tformArmas[4].transform.position, tformArmas[4].rotation);
                     objSuelo = true;
                     tformCamara.SetActive(false);
+                    tformCamara.SetActive(true);
                 }
                 break;
             case 8: //usar salami dinamita
