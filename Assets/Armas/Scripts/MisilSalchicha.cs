@@ -28,6 +28,11 @@ public class MisilSalchicha : MonoBehaviour
         {
             StartCoroutine(Explosion(0.0f));
         }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            StartCoroutine(Explosion(0.0f));
+        }
     }
 
     IEnumerator Explosion(float duracion)

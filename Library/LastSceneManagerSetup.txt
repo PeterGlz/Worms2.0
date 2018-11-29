@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Mapa/Mapa.unity
+- path: Assets/Armas/armas.unity
   isLoaded: 1
   isActive: 1
