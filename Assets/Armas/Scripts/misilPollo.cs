@@ -20,6 +20,10 @@ public class misilPollo : MonoBehaviour
     void Update()
     {
         transform.Translate(direction * vel * Time.deltaTime);
+
+        float j = Input.GetAxis("Vertical");
+
+        transform.Rotate(-j * 50f * Time.deltaTime, 0.0f, 0.0f);
     }
 
     private void OnCollisionEnter(Collision collision)

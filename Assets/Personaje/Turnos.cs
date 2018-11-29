@@ -5,18 +5,17 @@ using UnityEngine;
 public class Turnos : MonoBehaviour
 {
     public GameObject[] jugadores;
-    public GameObject[] personajes;
     public int turno;
 
     void Start()
     {
         turno = 0;
-        StartCoroutine(CrearTurnos());
+        StartCoroutine(CrearTurnos(2, 0));
     }
 
-    IEnumerator CrearTurnos()
+    IEnumerator CrearTurnos(int tempo, int nuevo)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(tempo);
         jugadores = GameObject.FindGameObjectsWithTag("Inventario");
         for (int i = 0; i < jugadores.Length; i++)
         {
@@ -24,6 +23,8 @@ public class Turnos : MonoBehaviour
             if (i != turno)
                 jugadores[i].SetActive(false);
         }
+        if (nuevo == 1)
+            Activando();
     }
 
     public void CambiarTurno()
@@ -33,12 +34,30 @@ public class Turnos : MonoBehaviour
         if (turno >= jugadores.Length)
             turno = 0;
 
-        for(int i = 0; i<jugadores.Length; i++)
+        Activando();
+    }
+
+    public void Activando()
+    {
+        for (int i = 0; i < jugadores.Length; i++)
         {
             if (i != turno)
                 jugadores[i].SetActive(false);
             else
                 jugadores[i].SetActive(true);
         }
+    }
+
+    public void VaciarTurnos()
+    {
+        for (int i = 0; i < jugadores.Length; i++)
+            jugadores[i].SetActive(true);
+
+        for (int i = 0; i < jugadores.Length; i++)
+        {
+            jugadores[i] = null;
+        }
+
+        StartCoroutine(CrearTurnos(0, 1));
     }
 }
