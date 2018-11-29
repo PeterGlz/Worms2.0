@@ -15,8 +15,8 @@ public class randomInstante : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        StartCoroutine(RandomInstantiate());
+    }
 	
 	// Update is called once per frame
 	void Update () {

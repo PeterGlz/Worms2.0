@@ -356,7 +356,7 @@ MonoBehaviour:
   - {fileID: 1000013284424148, guid: b29c3addc4240254785fef8671d1291b, type: 2}
   - {fileID: 1000011216760202, guid: 78a6a596f3cdc2641b44bb3d371c8db0, type: 2}
   - {fileID: 1000013191416304, guid: c48a3ebf277ae9f46bc06489f5850636, type: 2}
-  m_amount: 50
+  m_amount: 300
   m_left: {fileID: 310623617}
   m_right: {fileID: 1545351404}
   m_WaitTime: 0.01
