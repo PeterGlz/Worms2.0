@@ -10,7 +10,7 @@ public class Turnos : MonoBehaviour
     void Start()
     {
         turno = 0;
-        StartCoroutine(CrearTurnos(2, 0));
+        StartCoroutine(CrearTurnos(6, 0));
     }
 
     IEnumerator CrearTurnos(int tempo, int nuevo)
