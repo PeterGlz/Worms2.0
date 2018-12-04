@@ -3461,6 +3461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 0
+  equipo: 1
 --- !u!114 &114676549385829594
 MonoBehaviour:
   m_ObjectHideFlags: 1

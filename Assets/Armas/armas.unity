@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -170,6 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jugadores: []
   turno: 0
+  equipo1: 0
+  equipo2: 0
 --- !u!4 &327415117
 Transform:
   m_ObjectHideFlags: 0
@@ -342,10 +344,10 @@ MonoBehaviour:
   - {fileID: 1369035786638258, guid: 56b6d2c38f40db34fa52b8fc72b7eb23, type: 2}
   - {fileID: 1369035786638258, guid: 56b6d2c38f40db34fa52b8fc72b7eb23, type: 2}
   player2:
-  - {fileID: 1369035786638258, guid: 56b6d2c38f40db34fa52b8fc72b7eb23, type: 2}
-  - {fileID: 1369035786638258, guid: 56b6d2c38f40db34fa52b8fc72b7eb23, type: 2}
-  - {fileID: 1369035786638258, guid: 56b6d2c38f40db34fa52b8fc72b7eb23, type: 2}
-  - {fileID: 1369035786638258, guid: 56b6d2c38f40db34fa52b8fc72b7eb23, type: 2}
+  - {fileID: 1913741020554686, guid: d23e43f8a72603b4d8e0b406878e8ba8, type: 2}
+  - {fileID: 1913741020554686, guid: d23e43f8a72603b4d8e0b406878e8ba8, type: 2}
+  - {fileID: 1913741020554686, guid: d23e43f8a72603b4d8e0b406878e8ba8, type: 2}
+  - {fileID: 1913741020554686, guid: d23e43f8a72603b4d8e0b406878e8ba8, type: 2}
   Equipo1: 0
   Equipo2: 0
 --- !u!4 &726880932

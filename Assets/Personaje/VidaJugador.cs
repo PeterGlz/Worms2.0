@@ -5,14 +5,13 @@ using UnityEngine;
 public class VidaJugador : MonoBehaviour
 {
     public float vida;
+    public int equipo;
     private Turnos muerteTurno;
-    private RandomSpawn cantidadJugadores;
 
 	void Start ()
     {
         vida = 200.0f;
         muerteTurno = FindObjectOfType<Turnos>();
-        cantidadJugadores = FindObjectOfType<RandomSpawn>();
     }
 
     void Update()
@@ -21,8 +20,7 @@ public class VidaJugador : MonoBehaviour
         {
             vida = 0.0f;
             Destroy(gameObject);
-            cantidadJugadores.CantidadJugadores();
-            muerteTurno.VaciarTurnos();
+            muerteTurno.VaciarTurnos(equipo);
         }
     }
 
