@@ -24,7 +24,7 @@ public class RandomSpawn : MonoBehaviour
 
     void Update()
     {
-        if(Equipo1 == 0)
+        /*if (Equipo1 == 0)
         {
             print("Equipo 2 ganó");
         }
@@ -32,25 +32,25 @@ public class RandomSpawn : MonoBehaviour
         if (Equipo2 == 0)
         {
             print("Equipo 1 ganó");
-        }
+        }*/
     }
 
     public void CantidadJugadores()
     {
-        for(int i = 0; i < 4; i++)
+        /*for(int i = 0; i < 4; i++)
         {
-            if (player1[i].activeSelf == false)
+            if (!player1[i])
             {
                 print("Miembro de Equipo 1 murio");
                 Equipo1--;
             }
 
-            if (player2[i].activeSelf == false)
+            if (!player2[i])
             {
                 print("Miembro de Equipo 2 murio");
                 Equipo2--;
             }
-        }
+        }*/
     }
 
     IEnumerator SpawnP()

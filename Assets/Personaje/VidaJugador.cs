@@ -20,9 +20,8 @@ public class VidaJugador : MonoBehaviour
         if(vida <= 0)
         {
             vida = 0.0f;
-            gameObject.SetActive(false);
-            cantidadJugadores.CantidadJugadores();
             Destroy(gameObject);
+            cantidadJugadores.CantidadJugadores();
             muerteTurno.VaciarTurnos();
         }
     }
