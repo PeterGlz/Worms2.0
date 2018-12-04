@@ -4,19 +4,53 @@ using UnityEngine;
 
 public class RandomSpawn : MonoBehaviour
 {
-
-    public Transform[] player1;
-    public Transform[] player2;
+    public GameObject[] player1;
+    public GameObject[] player2;
+    public int Equipo1;
+    public int Equipo2;
 
     void Start ()
     {
         StartCoroutine(SpawnP());
+        Equipo1 = 4;
+        Equipo2 = 4;
 
         /*for (int i = 4; i < player1.Length; i++)
         {
             Instantiate(player1[i], new Vector3(Random.Range(-24, -20), Random.Range(-3, 15), 0), Quaternion.identity);
             Instantiate(player2[i], new Vector3(Random.Range(5, 9), Random.Range(-3, 15), 0), Quaternion.identity);
         }*/
+    }
+
+    void Update()
+    {
+        if(Equipo1 == 0)
+        {
+            print("Equipo 2 ganó");
+        }
+
+        if (Equipo2 == 0)
+        {
+            print("Equipo 1 ganó");
+        }
+    }
+
+    public void CantidadJugadores()
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            if (player1[i].activeSelf == false)
+            {
+                print("Miembro de Equipo 1 murio");
+                Equipo1--;
+            }
+
+            if (player2[i].activeSelf == false)
+            {
+                print("Miembro de Equipo 2 murio");
+                Equipo2--;
+            }
+        }
     }
 
     IEnumerator SpawnP()

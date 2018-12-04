@@ -67,10 +67,10 @@ public class armas : MonoBehaviour
         switch (armaUsando)
         {
             case 0: //usar tenedor
-                if (Input.GetMouseButtonDown(0))
+                /*if (Input.GetMouseButtonDown(0))
                 {
                     anim.SetTrigger("ataque");
-                } break;
+                }*/ break;
             case 1: //usar pimientero uzi
                 tformArmas[0].LookAt(lookPos);
                 if (Input.GetMouseButton(0) && municion > 0)

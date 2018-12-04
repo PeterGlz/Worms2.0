@@ -6,11 +6,13 @@ public class VidaJugador : MonoBehaviour
 {
     public float vida;
     private Turnos muerteTurno;
+    private RandomSpawn cantidadJugadores;
 
 	void Start ()
     {
         vida = 200.0f;
         muerteTurno = FindObjectOfType<Turnos>();
+        cantidadJugadores = FindObjectOfType<RandomSpawn>();
     }
 
     void Update()
@@ -18,6 +20,8 @@ public class VidaJugador : MonoBehaviour
         if(vida <= 0)
         {
             vida = 0.0f;
+            gameObject.SetActive(false);
+            cantidadJugadores.CantidadJugadores();
             Destroy(gameObject);
             muerteTurno.VaciarTurnos();
         }
