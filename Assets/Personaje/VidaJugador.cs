@@ -34,7 +34,7 @@ public class VidaJugador : MonoBehaviour
 
         if (collision.gameObject.tag == "bala_uzi")
         {
-            vida -= 10;
+            vida -= 1.5f;
             Debug.Log(vida);
         }
     }

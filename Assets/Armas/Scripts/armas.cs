@@ -67,10 +67,10 @@ public class armas : MonoBehaviour
         switch (armaUsando)
         {
             case 0: //usar tenedor
-                /*if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0))
                 {
-                    anim.SetTrigger("ataque");
-                }*/ break;
+                    ///anim.SetTrigger("ataque");
+                } break;
             case 1: //usar pimientero uzi
                 tformArmas[0].LookAt(lookPos);
                 if (Input.GetMouseButton(0) && municion > 0)
@@ -103,7 +103,10 @@ public class armas : MonoBehaviour
                     objSuelo = true;
                 }break;
             case 5: //usar baguette
-                break;
+                if(Input.GetMouseButtonDown(0))
+                {
+
+                }break;
             case 6: //usar gas mostaza
                 tformArmas[3].LookAt(lookPos);
                 if (Input.GetMouseButtonDown(0) && !objSuelo)

@@ -3447,7 +3447,7 @@ MonoBehaviour:
   rayMask:
     serializedVersion: 2
     m_Bits: 256
-  municion: 150
+  municion: 50
   objSuelo: 0
 --- !u!114 &114587291424153524
 MonoBehaviour:
