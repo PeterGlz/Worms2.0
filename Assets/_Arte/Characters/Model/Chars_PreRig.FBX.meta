@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 5d01e248c75f669469788dbe1021135d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: G_Possum
+    100004: G_Raccoon
+    100006: G_Rat
+    100008: G_Squirrel
+    100010: Pssm_Body
+    100012: Pssm_Foot_L
+    100014: Pssm_Foot_R
+    100016: Pssm_Hand_L
+    100018: Pssm_Hand_R
+    100020: Rat_Body
+    100022: Rat_Foot_L
+    100024: Rat_Foot_R
+    100026: Rat_Hand_L
+    100028: Rat_Hand_R
+    100030: Rccn_Body
+    100032: Rccn_Foot_L
+    100034: Rccn_Foot_R
+    100036: Rccn_Hand_L
+    100038: Rccn_Hand_R
+    100040: Sqrl_Body
+    100042: Sqrl_Foot_L
+    100044: Sqrl_Foot_R
+    100046: Sqrl_Hand_L
+    100048: Sqrl_Hand_R
+    100050: Sqrl_Theeth
+    400000: //RootNode
+    400002: G_Possum
+    400004: G_Raccoon
+    400006: G_Rat
+    400008: G_Squirrel
+    400010: Pssm_Body
+    400012: Pssm_Foot_L
+    400014: Pssm_Foot_R
+    400016: Pssm_Hand_L
+    400018: Pssm_Hand_R
+    400020: Rat_Body
+    400022: Rat_Foot_L
+    400024: Rat_Foot_R
+    400026: Rat_Hand_L
+    400028: Rat_Hand_R
+    400030: Rccn_Body
+    400032: Rccn_Foot_L
+    400034: Rccn_Foot_R
+    400036: Rccn_Hand_L
+    400038: Rccn_Hand_R
+    400040: Sqrl_Body
+    400042: Sqrl_Foot_L
+    400044: Sqrl_Foot_R
+    400046: Sqrl_Hand_L
+    400048: Sqrl_Hand_R
+    400050: Sqrl_Theeth
+    2100000: Mat_Squirrel
+    2100002: Mat_Rat
+    2100004: Mat_Possum
+    2100006: Mat_Raccoon3
+    2300000: Pssm_Foot_L
+    2300002: Pssm_Foot_R
+    2300004: Pssm_Hand_L
+    2300006: Pssm_Hand_R
+    2300008: Rat_Foot_L
+    2300010: Rat_Foot_R
+    2300012: Rat_Hand_L
+    2300014: Rat_Hand_R
+    2300016: Rccn_Foot_L
+    2300018: Rccn_Foot_R
+    2300020: Rccn_Hand_L
+    2300022: Rccn_Hand_R
+    2300024: Sqrl_Foot_L
+    2300026: Sqrl_Foot_R
+    2300028: Sqrl_Hand_L
+    2300030: Sqrl_Hand_R
+    2300032: Sqrl_Theeth
+    3300000: Pssm_Foot_L
+    3300002: Pssm_Foot_R
+    3300004: Pssm_Hand_L
+    3300006: Pssm_Hand_R
+    3300008: Rat_Foot_L
+    3300010: Rat_Foot_R
+    3300012: Rat_Hand_L
+    3300014: Rat_Hand_R
+    3300016: Rccn_Foot_L
+    3300018: Rccn_Foot_R
+    3300020: Rccn_Hand_L
+    3300022: Rccn_Hand_R
+    3300024: Sqrl_Foot_L
+    3300026: Sqrl_Foot_R
+    3300028: Sqrl_Hand_L
+    3300030: Sqrl_Hand_R
+    3300032: Sqrl_Theeth
+    4300000: Sqrl_Body
+    4300002: Sqrl_Hand_R
+    4300004: Sqrl_Foot_R
+    4300006: Sqrl_Hand_L
+    4300008: Sqrl_Foot_L
+    4300010: Sqrl_Theeth
+    4300012: Rat_Foot_R
+    4300014: Rat_Foot_L
+    4300016: Rat_Hand_L
+    4300018: Rat_Hand_R
+    4300020: Rat_Body
+    4300022: Pssm_Body
+    4300024: Pssm_Hand_L
+    4300026: Pssm_Hand_R
+    4300028: Pssm_Foot_L
+    4300030: Pssm_Foot_R
+    4300032: Rccn_Body
+    4300034: Rccn_Hand_R
+    4300036: Rccn_Foot_R
+    4300038: Rccn_Hand_L
+    4300040: Rccn_Foot_L
+    9500000: //RootNode
+    13700000: Pssm_Body
+    13700002: Rat_Body
+    13700004: Rccn_Body
+    13700006: Sqrl_Body
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

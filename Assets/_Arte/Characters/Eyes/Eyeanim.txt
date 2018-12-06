@@ -1,0 +1,5 @@
+Normal: Offset 0, 0
+Sad: Offset 0, 0.7
+ANGERY: Offset 0, 42
+Smug: Offset 0.5, 0.7
+No Eyes: Offset 0.5, 0.4
