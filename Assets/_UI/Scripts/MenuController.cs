@@ -8,11 +8,17 @@ using UnityEngine.Audio;
 public class MenuController : MonoBehaviour {
 
     public GameObject pnlOptions;
+    public GameObject pnlCredits;
     public GameObject btnMenu;
-    //public GameObject pnlPause;
+    public GameObject loadIcon;
+
+    public RawImage LoadingImage;
+    public Text progressText;
+
 
     public bool inMenu = true;
     public bool inOptions;
+    public bool inCredits;
 
     public AudioMixer audioMixer;
 
@@ -27,12 +33,12 @@ public class MenuController : MonoBehaviour {
         List<string> options = new List<string>();
 
         int _currentResolution = 0;
-        for(int i=0; i < _resolutions.Length; i++)
+        for (int i = 0; i < _resolutions.Length; i++)
         {
             string option = _resolutions[i].width + " x " + _resolutions[i].height;
             options.Add(option);
 
-            if(_resolutions[i].width == Screen.currentResolution.width && _resolutions[i].height == Screen.currentResolution.height)
+            if (_resolutions[i].width == Screen.currentResolution.width && _resolutions[i].height == Screen.currentResolution.height)
             {
                 _currentResolution = i;
             }
@@ -44,6 +50,14 @@ public class MenuController : MonoBehaviour {
 
     void Update()
     {
+        LoadingImage.transform.Rotate(LoadingImage.transform.rotation.x, LoadingImage.transform.rotation.y, LoadingImage.transform.rotation.z - 1f);
+
+        if (LoadingImage.transform.rotation.z <= -1f)
+        {
+            Debug.Log("HOla");
+            LoadingImage.transform.rotation = new Quaternion(0, 0, 0, 0);
+        }
+       
         if (inMenu)
         {
             btnMenu.SetActive(true);
@@ -59,11 +73,23 @@ public class MenuController : MonoBehaviour {
             pnlOptions.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && inOptions == true)
+        if (inCredits)
+        {
+            pnlCredits.SetActive(true);
+        } else
+        {
+            pnlCredits.SetActive(false);
+        }
+
+
+
+        if (Input.GetKeyDown(KeyCode.Escape) && inOptions == true || Input.GetKeyDown(KeyCode.Escape) && inCredits == true)
         {
             inOptions = false;
+            inCredits = false;
             inMenu = true;
         }
+
     }
 
     ///------MENU---------------------------
@@ -75,15 +101,24 @@ public class MenuController : MonoBehaviour {
         SceneManager.LoadScene("enJuego");
     }
 
-    public void Opciones ()
+    public void Opciones()
     {
         inOptions = true;
+        inCredits = false;
+        inMenu = false;
+    }
+
+    public void Creditos()
+    {
+        inOptions = false;
+        inCredits = true;
         inMenu = false;
     }
 
     public void Cerrar()
     {
         inOptions = false;
+        inCredits = false;
         inMenu = true;
     }
 
@@ -116,6 +151,27 @@ public class MenuController : MonoBehaviour {
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    ///-------JUEGO--------------------
-    ///
+    ///-------LOAD SCREEN--------------------
+
+    public void LoadLevel(int myScene)
+    {
+        loadIcon.SetActive(true);
+        StartCoroutine(LoadAsyncScene(myScene));
+    }
+        
+    IEnumerator LoadAsyncScene(int myScene)
+    {
+        AsyncOperation aOperation = SceneManager.LoadSceneAsync(myScene);
+
+        while (!aOperation.isDone)
+        {
+            float progress = Mathf.Clamp01(aOperation.progress / 0.9f);
+
+            progressText.text = progress * 100f + "%";
+
+            yield return null;
+
+        }
+    }
+    
 }
