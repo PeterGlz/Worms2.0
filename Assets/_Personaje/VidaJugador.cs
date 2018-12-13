@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VidaJugador : MonoBehaviour
 {
     public float vida;
     public int equipo;
     private Turnos muerteTurno;
+
+    public Canvas InfoPlayer;
+    public Text Name;
+    public Text txtVida;
 
 	void Start ()
     {
@@ -16,6 +21,17 @@ public class VidaJugador : MonoBehaviour
 
     void Update()
     {
+        if(equipo == 1) {
+            Name.text = "Player1";
+            Name.color = Color.blue;
+        }
+        else {
+            Name.text = "Player2";
+            Name.color = Color.red;
+        }
+        txtVida.text = vida.ToString();
+        txtVida.color = Color.green;
+
         if(vida <= 0)
         {
             vida = 0.0f;

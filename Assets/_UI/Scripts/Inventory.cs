@@ -5,10 +5,24 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
 
+    public GameObject UISuperior;
+    public GameObject UIInventory;
+
     public List<RawImage> slots;
     public List<Texture> Weapons;
 
     //public int avSlots = 0;
+
+    void Start()
+    {
+        Invoke("ActivarUI", 0);
+    }
+
+    void ActivarUI()
+    {
+        UISuperior.SetActive(true);
+        UIInventory.SetActive(true);
+    }
 
     void Update()
     {

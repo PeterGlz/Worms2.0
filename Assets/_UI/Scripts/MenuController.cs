@@ -96,9 +96,7 @@ public class MenuController : MonoBehaviour {
 
     public void Jugar()
     {
-        Debug.Log("Play");
-        //SceneManager.LoadScene("armas");
-        SceneManager.LoadScene("enJuego");
+        SceneManager.LoadScene("Load");
     }
 
     public void Opciones()
@@ -149,29 +147,6 @@ public class MenuController : MonoBehaviour {
     {
         Resolution resolution = _resolutions[_resolution];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
-
-    ///-------LOAD SCREEN--------------------
-
-    public void LoadLevel(int myScene)
-    {
-        loadIcon.SetActive(true);
-        StartCoroutine(LoadAsyncScene(myScene));
-    }
-        
-    IEnumerator LoadAsyncScene(int myScene)
-    {
-        AsyncOperation aOperation = SceneManager.LoadSceneAsync(myScene);
-
-        while (!aOperation.isDone)
-        {
-            float progress = Mathf.Clamp01(aOperation.progress / 0.9f);
-
-            progressText.text = progress * 100f + "%";
-
-            yield return null;
-
-        }
     }
     
 }
