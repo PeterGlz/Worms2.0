@@ -20,8 +20,6 @@ public class Turnos : MonoBehaviour
     private void Update()
     {
         
-
-        
     }
 
     IEnumerator CrearTurnos(int tempo, int nuevo)

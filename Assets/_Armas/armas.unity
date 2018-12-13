@@ -341,13 +341,13 @@ MonoBehaviour:
   player1:
   - {fileID: 1195238736504970, guid: fb84209a5b007b8418193bed32a8d506, type: 2}
   - {fileID: 1195238736504970, guid: fb84209a5b007b8418193bed32a8d506, type: 2}
-  - {fileID: 1209258914651096, guid: f2c053f8b3fb6ec41acd2f45ac2826cf, type: 2}
-  - {fileID: 1209258914651096, guid: f2c053f8b3fb6ec41acd2f45ac2826cf, type: 2}
+  - {fileID: 1195238736504970, guid: fb84209a5b007b8418193bed32a8d506, type: 2}
+  - {fileID: 1195238736504970, guid: fb84209a5b007b8418193bed32a8d506, type: 2}
   player2:
   - {fileID: 1052068306227574, guid: 3b066feae377973499c505c5cb5c5de3, type: 2}
   - {fileID: 1052068306227574, guid: 3b066feae377973499c505c5cb5c5de3, type: 2}
-  - {fileID: 1563097708284116, guid: 04f94d72aff742d47a52d4e272133778, type: 2}
-  - {fileID: 1563097708284116, guid: 04f94d72aff742d47a52d4e272133778, type: 2}
+  - {fileID: 1052068306227574, guid: 3b066feae377973499c505c5cb5c5de3, type: 2}
+  - {fileID: 1052068306227574, guid: 3b066feae377973499c505c5cb5c5de3, type: 2}
   Equipo1: 0
   Equipo2: 0
 --- !u!4 &726880932
@@ -531,7 +531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1968883734
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ public class controller : MonoBehaviour
 	private int extraJumps;
 	public int extraJumpsValue;
 
+
     public GameObject algo;
 
 	void Start()
@@ -53,6 +54,12 @@ public class controller : MonoBehaviour
             {
                 Flip();
             }
+
+            if(Input.GetKey(KeyCode.J))
+            {
+                rb.AddForce(transform.up * 15);
+                Debug.Log("algo");
+            }
         }
 	}
 
@@ -63,6 +70,12 @@ public class controller : MonoBehaviour
             if (isGrounded == true)
             {
                 extraJumps = extraJumpsValue;
+                GetComponent<Rigidbody2D>().drag = 0;
+            }
+
+            if(Input.GetKeyDown(KeyCode.P))
+            {
+                GetComponent<Rigidbody2D>().drag = 8;
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
