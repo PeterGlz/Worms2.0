@@ -55,7 +55,7 @@ public class controller : MonoBehaviour
                 Flip();
             }
 
-            if(Input.GetKey(KeyCode.J))
+            if(Input.GetKey(KeyCode.X))
             {
                 rb.AddForce(transform.up * 15);
                 Debug.Log("algo");
@@ -73,7 +73,7 @@ public class controller : MonoBehaviour
                 GetComponent<Rigidbody2D>().drag = 0;
             }
 
-            if(Input.GetKeyDown(KeyCode.P))
+            if(Input.GetKeyDown(KeyCode.C))
             {
                 GetComponent<Rigidbody2D>().drag = 8;
             }
