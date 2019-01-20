@@ -28,7 +28,6 @@ public class Turnos : MonoBehaviour
         jugadores = GameObject.FindGameObjectsWithTag("Inventario");
         for (int i = 0; i < jugadores.Length; i++)
         {
-            Debug.Log("Funciona");
             if (i != turno)
                 jugadores[i].SetActive(false);
         }

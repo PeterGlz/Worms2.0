@@ -310,7 +310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1499692996538210
 GameObject:
   m_ObjectHideFlags: 1
@@ -2010,7 +2010,7 @@ Animator:
   m_GameObject: {fileID: 1195238736504970}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24aeebd4f02c31f439908a0ebf19149a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2175,8 +2175,8 @@ MonoBehaviour:
   - {fileID: 4174218434920358, guid: 8f3a7b8d6f77db640a7ea04fe16b49c8, type: 2}
   - {fileID: 4158661111737404, guid: 9bca2c6aeccd37f44b912b7548460636, type: 2}
   tformCamara: {fileID: 1839651018279860}
-  anim1: {fileID: 95209005708105640}
-  anim2: {fileID: 95236027740846504}
+  anim1: {fileID: 95617184687029342, guid: 39b3c29c92d48434ea3228c01a20c299, type: 2}
+  anim2: {fileID: 95225502523322194, guid: b2c5b5d000f03af4f94bf9438edcabb5, type: 2}
   rayMask:
     serializedVersion: 2
     m_Bits: 256
