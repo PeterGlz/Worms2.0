@@ -62,5 +62,11 @@ public class VidaJugador : MonoBehaviour
             vida -= 0.5f;
             Debug.Log(vida);
         }
+
+        if (collision.gameObject.tag == "agua")
+        {
+            vida -= 1f;
+            Debug.Log(vida);
+        }
     }
 }

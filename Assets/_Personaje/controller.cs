@@ -58,7 +58,6 @@ public class controller : MonoBehaviour
             if(Input.GetKey(KeyCode.X))
             {
                 rb.AddForce(transform.up * 15);
-                Debug.Log("algo");
             }
         }
 	}
@@ -91,6 +90,14 @@ public class controller : MonoBehaviour
             ClickM();
         }
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "agua")
+        {
+            GetComponent<Rigidbody2D>().drag = 12;
+        }
+    }
 
     private void ClickM()
     {
