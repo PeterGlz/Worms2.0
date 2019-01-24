@@ -34,7 +34,7 @@ public class granadaController : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         explotar.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         usarGranada.objSuelo = false;
         cambiandoT.CambiarTurno();
         Destroy(gameObject);

@@ -7,7 +7,9 @@ public class Turnos : MonoBehaviour
     public GameObject[] jugadores;
     public int turno;
     public int equipo1;
-    public int equipo2; 
+    public int equipo2;
+    float tiempoT = 30;
+    bool inicio = false;
 
     void Start()
     {
@@ -19,7 +21,17 @@ public class Turnos : MonoBehaviour
 
     private void Update()
     {
-        
+        if(inicio == true)
+        {
+            tiempoT -= Time.deltaTime;
+            Debug.Log(tiempoT);
+
+            if (tiempoT <= Time.deltaTime)
+            {
+                CambiarTurno();
+                tiempoT = 30;
+            }
+        }
     }
 
     IEnumerator CrearTurnos(int tempo, int nuevo)
@@ -33,6 +45,8 @@ public class Turnos : MonoBehaviour
         }
         if (nuevo == 1)
             Activando();
+        else
+            inicio = true;
     }
 
     public void CambiarTurno()

@@ -95,7 +95,7 @@ public class controller : MonoBehaviour
     {
         if (collision.gameObject.tag == "agua")
         {
-            GetComponent<Rigidbody2D>().drag = 12;
+            GetComponent<Rigidbody2D>().drag = 2;
         }
     }
 

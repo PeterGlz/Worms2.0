@@ -26,8 +26,8 @@ public class minaController : MonoBehaviour
     {
         explotar.SetActive(true);
         yield return new WaitForSeconds(0.5f);
-        usarMina.objSuelo = false;
-        cambiandoT.CambiarTurno();
+        //usarMina.objSuelo = false;
+        //cambiandoT.CambiarTurno();
         Destroy(gameObject);
     }
 }

@@ -83,13 +83,19 @@ public class armas : MonoBehaviour
                     if(municion <= 0)
                     {
                         cambiandoT.CambiarTurno();
+                        municion = 50;
                     }
                 } break;
             case 2: //usar mina huevo
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
-                    Instantiate(prefabArmas[1], gObjectArmas[2].transform.position, Quaternion.identity);
-                    objSuelo = true;
+                    bool Soltar = true;
+                    if(Soltar == true)
+                    {
+                        Instantiate(prefabArmas[1], gObjectArmas[2].transform.position, Quaternion.identity);
+                        Soltar = false;
+                    }
+                    //objSuelo = true;
                 } break;
             case 3://usar granada albondiga
                 tformArmas[1].LookAt(lookPos);
