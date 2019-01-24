@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Cubito : MonoBehaviour
 {
-	void Start ()
+    Rigidbody2D rb;
+
+    void Start ()
     {
         Color nuevoColor = Random.ColorHSV();
         ActualizarColor(nuevoColor);
@@ -19,8 +21,16 @@ public class Cubito : MonoBehaviour
     {
         if (collision.gameObject.tag == "explosion")
         {
-            print("exploto");
             Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "agua")
+        {
+            print("chango");
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 
