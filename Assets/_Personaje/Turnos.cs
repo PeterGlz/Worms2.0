@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Turnos : MonoBehaviour
 {
@@ -8,8 +9,10 @@ public class Turnos : MonoBehaviour
     public int turno;
     public int equipo1;
     public int equipo2;
-    float tiempoT = 30;
+    public float tiempoT = 30;
     bool inicio = false;
+
+    public Text tiempoRest;
 
     void Start()
     {
@@ -21,6 +24,8 @@ public class Turnos : MonoBehaviour
 
     private void Update()
     {
+        tiempoRest.text = Mathf.RoundToInt(tiempoT).ToString();
+
         if(inicio == true)
         {
             tiempoT -= Time.deltaTime;
