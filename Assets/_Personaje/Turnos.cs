@@ -14,6 +14,8 @@ public class Turnos : MonoBehaviour
 
     public Text tiempoRest;
 
+    public GameObject VictoryCanvas;
+
     void Start()
     {
         turno = 0;
@@ -86,6 +88,7 @@ public class Turnos : MonoBehaviour
             {
                 equipo1 = 0;
                 print("Equipo 2 ha ganado");
+                VictoryCanvas.SetActive(true);
             }
         }
         else if(equipo == 2)
@@ -97,6 +100,7 @@ public class Turnos : MonoBehaviour
             {
                 equipo2 = 0;
                 print("Equipo 1 ha ganado");
+                VictoryCanvas.SetActive(true);
             }
         }
 
