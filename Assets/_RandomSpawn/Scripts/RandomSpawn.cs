@@ -31,7 +31,7 @@ public class RandomSpawn : MonoBehaviour
 
     IEnumerator SpawnP()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
         Instantiate(player1[0], new Vector3(Random.Range(-24, -20), Random.Range(-3, 15), 0), Quaternion.identity);
         Instantiate(player2[0], new Vector3(Random.Range(5, 9), Random.Range(-3, 15), 0), Quaternion.identity);
 

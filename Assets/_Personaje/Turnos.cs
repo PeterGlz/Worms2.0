@@ -21,7 +21,7 @@ public class Turnos : MonoBehaviour
         turno = 0;
         equipo1 = 4;
         equipo2 = 4;
-        StartCoroutine(CrearTurnos(6, 0));
+        StartCoroutine(CrearTurnos(8f, 0));
     }
 
     private void Update()
@@ -41,7 +41,7 @@ public class Turnos : MonoBehaviour
         }
     }
 
-    IEnumerator CrearTurnos(int tempo, int nuevo)
+    IEnumerator CrearTurnos(float tempo, int nuevo)
     {
         yield return new WaitForSeconds(tempo);
         jugadores = GameObject.FindGameObjectsWithTag("Inventario");

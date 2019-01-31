@@ -19,6 +19,7 @@ public class armas : MonoBehaviour
     public float municion;
     public int armaUsando;
     public bool objSuelo;
+    bool soltar;
 
     private Turnos cambiandoT;
 
@@ -29,6 +30,7 @@ public class armas : MonoBehaviour
         armaUsando = 0;
         gObjectArmas[0].SetActive(true);
         objSuelo = false;
+        soltar = true;
         anim1 = GetComponent<Animator>();
         anim2 = GetComponent<Animator>();
         cambiandoT = FindObjectOfType<Turnos>();
@@ -71,8 +73,8 @@ public class armas : MonoBehaviour
             case 0: //usar tenedor
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log("ataco");
-                    anim1.SetTrigger("Atck1");
+                    /*Debug.Log("ataco");
+                    anim1.SetTrigger("Atck1");*/
                 } break;
             case 1: //usar pimientero uzi
                 tformArmas[0].LookAt(lookPos);
@@ -82,6 +84,7 @@ public class armas : MonoBehaviour
                     municion--;
                     if(municion <= 0)
                     {
+                        soltar = true;
                         cambiandoT.CambiarTurno();
                         municion = 50;
                     }
@@ -89,13 +92,11 @@ public class armas : MonoBehaviour
             case 2: //usar mina huevo
                 if (Input.GetMouseButtonDown(0) && !objSuelo)
                 {
-                    bool Soltar = true;
-                    if(Soltar == true)
+                    if(soltar == true)
                     {
                         Instantiate(prefabArmas[1], gObjectArmas[2].transform.position, Quaternion.identity);
-                        Soltar = false;
+                        soltar = false;
                     }
-                    //objSuelo = true;
                 } break;
             case 3://usar granada albondiga
                 tformArmas[1].LookAt(lookPos);
@@ -103,6 +104,7 @@ public class armas : MonoBehaviour
                 {
                     Instantiate(prefabArmas[2], tformArmas[1].transform.position, tformArmas[1].rotation);
                     objSuelo = true;
+                    soltar = true;
                 } break;
             case 4: //usar hot-dog cohete
                 tformArmas[2].LookAt(lookPos);
@@ -110,11 +112,12 @@ public class armas : MonoBehaviour
                 {
                     Instantiate(prefabArmas[3], tformArmas[2].position, tformArmas[2].rotation);
                     objSuelo = true;
+                    soltar = true;
                 } break;
             case 5: //usar baguette
                 if(Input.GetMouseButtonDown(0))
                 {
-                    anim2.SetTrigger("atck2");
+                    //anim2.SetTrigger("atck2");
                 } break;
             case 6: //usar gas mostaza
                 tformArmas[3].LookAt(lookPos);
@@ -122,6 +125,7 @@ public class armas : MonoBehaviour
                 {
                     Instantiate(prefabArmas[4], tformArmas[3].transform.position, tformArmas[3].rotation);
                     objSuelo = true;
+                    soltar = true;
                 } break;
             case 7: //usar pollo misil
                 tformArmas[4].LookAt(lookPos);
@@ -129,6 +133,7 @@ public class armas : MonoBehaviour
                 {
                     Instantiate(prefabArmas[5], tformArmas[4].transform.position, tformArmas[4].rotation);
                     objSuelo = true;
+                    soltar = true;
                     tformCamara.SetActive(false);
                     tformCamara.SetActive(true);
                 } break;
@@ -137,6 +142,7 @@ public class armas : MonoBehaviour
                 {
                     Instantiate(prefabArmas[6], gObjectArmas[8].transform.position, Quaternion.identity);
                     objSuelo = true;
+                    soltar = true;
                 } break;
         }
     }
