@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour {
 
     public GameObject pnlOptions;
     public GameObject pnlCredits;
+    public GameObject pnlCredits2;
     public GameObject btnMenu;
     public GameObject loadIcon;
 
@@ -19,6 +20,7 @@ public class MenuController : MonoBehaviour {
     public bool inMenu = true;
     public bool inOptions;
     public bool inCredits;
+    public bool inCredits2;
 
     public AudioMixer audioMixer;
 
@@ -81,12 +83,22 @@ public class MenuController : MonoBehaviour {
             pnlCredits.SetActive(false);
         }
 
+        if (inCredits2)
+        {
+            pnlCredits2.SetActive(true);
+        }
+        else
+        {
+            pnlCredits2.SetActive(false);
+        }
+
 
 
         if (Input.GetKeyDown(KeyCode.Escape) && inOptions == true || Input.GetKeyDown(KeyCode.Escape) && inCredits == true)
         {
             inOptions = false;
             inCredits = false;
+            inCredits2 = false;
             inMenu = true;
         }
 
@@ -103,6 +115,7 @@ public class MenuController : MonoBehaviour {
     {
         inOptions = true;
         inCredits = false;
+        inCredits2 = false;
         inMenu = false;
     }
 
@@ -110,13 +123,30 @@ public class MenuController : MonoBehaviour {
     {
         inOptions = false;
         inCredits = true;
+        inCredits2 = false;
         inMenu = false;
+    }
+
+    public void ChangeCredits()
+    {
+       if(inCredits == true)
+        {
+            inCredits = false;
+            inCredits2 = true;
+        }
+
+       else if(inCredits2 == true)
+        {
+            inCredits = true;
+            inCredits2 = false;
+        }
     }
 
     public void Cerrar()
     {
         inOptions = false;
         inCredits = false;
+        inCredits2 = false;
         inMenu = true;
     }
 
