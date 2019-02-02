@@ -36,7 +36,7 @@ public class Turnos : MonoBehaviour
             if (tiempoT <= Time.deltaTime)
             {
                 CambiarTurno();
-                tiempoT = 30;
+                //tiempoT = 30;
             }
         }
     }
@@ -63,6 +63,7 @@ public class Turnos : MonoBehaviour
         if (turno >= jugadores.Length)
             turno = 0;
 
+        tiempoT = 30;
         Activando();
     }
 
